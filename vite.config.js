@@ -24,6 +24,7 @@ function moveOutputPlugin() {
 
 export default defineConfig({
   base: '/yaMeiProject/',
+  // base: '/testYamei/',
   plugins: [
     // 如果ejs更新畫面要顯示
     liveReload(['public/layouts/*.ejs', 'src/pages/**/*.{js,ejs}', 'src/pages/**/*.html']),
