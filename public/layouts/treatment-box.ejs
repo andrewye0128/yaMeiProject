@@ -1,0 +1,170 @@
+<div class="treatment-box w-full border-box bg-primary-100 px-3 py-16 md:px-40 md:py-16 lg:px-56">
+  <div class="treatment-title text-center mb-8 md:flex flex-col items-center md:items-baseline">
+    <h2 class="title-font mb-2">診療項目</h2>
+    <span class="E-font ">Treatment</span>
+  </div>
+  <div class="content">
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="/public/images/rdesign_14813 1.png" alt="">
+      </div>
+      <div class="treatment-name">一般牙科</div>
+      <div class="btn font-semibold text-center">查看更多</div>
+    </div>
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="/public/images/rdesign_14813 2.png" alt="">
+      </div>
+      <div class="treatment-name">兒童牙科</div>
+      <div class="btn font-semibold text-center">查看更多</div>
+    </div>
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="/public/images/rdesign_14813 3.png" alt="">
+      </div>
+      <div class="treatment-name">牙齒矯正</div>
+      <div class="btn font-semibold text-center">查看更多</div>
+    </div>
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="/public/images/rdesign_14813 4.png" alt="">
+      </div>
+      <div class="treatment-name">美容牙科</div>
+      <div class="btn font-semibold text-center">查看更多</div>
+    </div>
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="/public/images/rdesign_14813 5.png" alt="">
+      </div>
+      <div class="treatment-name">人工植牙</div>
+      <div class="btn font-semibold text-center">查看更多</div>
+    </div>
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="/public/images/rdesign_14813 6.png" alt="">
+      </div>
+      <div class="treatment-name">其他診療項目</div>
+      <div class="btn font-semibold text-center">查看更多</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .title-font {
+    font-family: 'Noto Sans TC';
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+    letter-spacing: 0.08em;
+  }
+
+  .E-font {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.08em;
+    color: #198783;
+  }
+
+
+  .treatment-box .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .treatment-box .review-card {
+    width: 100%;
+    max-width: 351px;
+    height: 242px;
+    margin-bottom: 24px;
+  }
+
+  .treatment-name {
+    color: #363636;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 1.6px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+
+  .treatment-box .review-card .btn {
+    color: #666666;
+    background: #f0f0f0;
+    width: 108px;
+    height: 36px;
+    padding: 6px 20px;
+    border-radius: 25px;
+  }
+
+  @media (min-width:768px) {
+    .title-font {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 38px;
+      letter-spacing: 0.08em;
+      text-align: left;
+    }
+
+    .E-font {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      letter-spacing: 0.08em;
+      text-align: left;
+    }
+
+    .E-font::after {
+      content: "";
+      width: 100px;
+      display: inline-block;
+      margin: 4px;
+      border: 1.5px solid #198783;
+    }
+
+
+    .treatment-box .content {
+      max-width: calc(1296px * .75);
+    }
+
+    .treatment-box .content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .treatment-title {
+      font-size: 28px;
+      margin-top: 40px;
+      margin-bottom: 24px;
+    }
+
+    .treatment-box .review-card {
+      /* max-width: 293px; */
+      max-width: 48%;
+      height: calc(396px * .75);
+    }
+  }
+
+  @media (min-width: 1075px) {
+
+    .treatment-box .review-card {
+      max-width: 31%;
+    }
+  }
+
+  @media (min-width: 1900px) {
+    .treatment-box .content {
+      max-width: 1296px;
+    }
+
+    .treatment-box .review-card {
+      max-width: 412px;
+      height: 396px;
+    }
+  }
+</style>
