@@ -49,3 +49,18 @@ window.onscroll = () => {
     preScroll = currentScrollPos
   }
 }
+
+// 將整份文件封裝為一個對象並使用 export default 導出
+const myModule = {
+  menu,
+  links,
+  close,
+  menuDisplayToggle,
+  closeDisplayToggle,
+  preScroll,
+  header,
+  newsBox,
+  isNavbarVisible
+}
+
+export default myModule
