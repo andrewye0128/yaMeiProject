@@ -1,5 +1,4 @@
 
-
 // 抓取節點
 const menu = document.querySelector('#menu')
 const links = document.querySelector('#links')
@@ -40,7 +39,6 @@ const scrollChange = () => {
     header.style.top = "0";
   });  
 }
-
 
 
 

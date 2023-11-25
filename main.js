@@ -1,4 +1,5 @@
-// import "tailwindcss/tailwind.css";
+
+import 'tailwindcss/tailwind.css'
 // import "./src/css/tailwind.css"; 
 import headers from "./src/js/header.js";
 import {
@@ -41,3 +42,5 @@ others.toggleLoginName();
 
 // 登出點擊事件
 others.loginName.addEventListener("click", others.logOut);
+
+
