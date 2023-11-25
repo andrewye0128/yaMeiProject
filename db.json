@@ -1,0 +1,75 @@
+{
+  "users": [
+    {
+      "email": "user@mail.com",
+      "password": "$2a$10$uTmMXn.8cARad9ljojr1Yurd1AFOE8DR3M0CQOMqua7XmM6fRE74m",
+      "checkPawword": "12345",
+      "name": "豪",
+      "phone": "0936665622",
+      "role": "user",
+      "id": 1
+    },
+    {
+      "email": "user1@mail.com",
+      "password": "$2a$10$VAOl4NKKsaGaLc9o2k.Lp.ZbapPbFhUUoApW4ajC.3BY18KrGukKm",
+      "checkPawword": "12345",
+      "name": "user1",
+      "phone": "0936369852",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "email": "user2@mail.com",
+      "password": "$2a$10$/NBhKLIdkc4BnLq1KOt6Ue5OGpKlD4LS7cCluVv5DDixu08mm337a",
+      "checkPawword": "12345",
+      "name": "user2",
+      "phone": "0936369852",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "email": "user3@mail.com",
+      "password": "$2a$10$ySIO91/wOihNBmenUptH8OpgbxTzZvASn379WE2k3ch3sHsDoy6E.",
+      "checkPawword": "12345",
+      "name": "user3",
+      "phone": "0936369836",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "email": "root@gmail.com",
+      "password": "$2a$10$XRNlch2/L1v8k/zoYPGlbOYXA/3HEWM4Ygnan/pVPD59UTygYmQoC",
+      "checkPawword": "12345678",
+      "name": "admin",
+      "phone": "0900800088",
+      "role": "admin",
+      "id": 5
+    },
+    {
+      "email": "user4@mail.com",
+      "password": "$2a$10$zNG04tTWNBH.j5y/ElmJ/eF4eZvvGIfwI6ifx9Aa9eDJ5sfIutShK",
+      "checkPawword": "12345",
+      "name": "user4",
+      "phone": "0936369852",
+      "role": "user",
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

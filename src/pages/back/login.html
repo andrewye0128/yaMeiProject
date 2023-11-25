@@ -20,11 +20,13 @@
     <div
       class="w-4/5 mx-auto flex flex-col items-center justify-center pt-32 pb-10"
     >
-      <p class="text-[28px] font-bold text-center mb-7">後台登入</p>
-      <form id="adminLogin-form" class="w-[356px]">
+      <p class="text-[28px] font-bold text-center mb-7">會員登入</p>
+      <form id="login-form" class="w-[356px]">
         <div class="relative mb-8">
           <label class="w-full">
             <input
+              id="email"
+              type="text"
               class="w-full h-12 pl-3.5 pt-5 border-0 border-b-[2.5px] border-[#657786] bg-primary-100 focus:outline-0 focus:border-[#1e4bd1]"
               placeholder="請輸入帳號"
               required
@@ -35,6 +37,8 @@
         <div class="relative mb-8">
           <label class="w-full">
             <input
+              id="password"
+              type="password"
               class="w-full h-12 pl-3.5 pt-5 border-0 border-b-[2.5px] border-[#657786] bg-primary-100 focus:outline-0 focus:border-[#1e4bd1]"
               placeholder="請輸入密碼"
               required
@@ -43,36 +47,27 @@
           </label>
         </div>
         <button
-        type=""
+          type="submit"
           class="w-full py-2 px-6 text-white text-xl font-bold mb-5 mt-[1.5rem] bg-primary-300 rounded-[50px] hover:bg-primary-400"
         >
           登入
         </button>
       </form>
       <div class="w-[356px]">
-        <div class="flex justify-end">
-          <a
-            class="block mr-3.5 text-blue-600 text-center underline decoration-2"
-            href="./login.html"
-          >
-            前台登入
-          </a>
-          <span class="mr-3.5">&bull;</span>
-          <a
-            class="block text-blue-600 text-center underline decoration-2"
-            href="./sign-up.html"
-          >
-            註冊
-          </a>
-        </div>
+        <a
+          class="block w-full text-blue-600 text-center underline decoration-2"
+          href="./sign-up.html"
+        >
+          註冊
+        </a>
       </div>
     </div>
 
     <!-- footer -->
     <%- include('public/layouts/footer.ejs') %>
 
-    <!-- 載入main.js -->
-      <script type="module" src="../../../main.js"></script>
+     <!-- 載入main.js -->
+    <script type="module" src="../../../main.js"></script>
 
     <!-- 載入sweetlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
