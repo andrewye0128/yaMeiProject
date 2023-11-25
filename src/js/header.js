@@ -1,7 +1,9 @@
+
 // 抓取節點
 const menu = document.querySelector('#menu')
 const links = document.querySelector('#links')
 const close = document.querySelector('#close')
+
 
 // 點擊menu函式
 function menuDisplayToggle() {
@@ -13,54 +15,43 @@ function closeDisplayToggle() {
   links.style.width = '0vw'
 }
 
-// menu點擊事件
-menu.addEventListener('click', menuDisplayToggle)
-close.addEventListener('click', closeDisplayToggle)
 
-let preScroll = window.scrollY
+const header = document.querySelector("#header");
+let prevScrollPos = window.scrollY;
 
-const header = document.querySelector('#header')
-const newsBox = document.querySelector('.news-box')
-let isNavbarVisible = false
+const scrollChange = () => {
+  window.addEventListener("scroll", () => {
+    const currentScrollPos = window.scrollY;
 
-window.onscroll = () => {
-  const currentScrollPos = window.scrollY
+    if (prevScrollPos > currentScrollPos) {
+      // 向上滾動，顯示導航欄
+      header.style.top = "0";
+    } else {
+      // 向下滾動，隱藏導航欄
+      header.style.top = "-85px";
+    }
 
-  // 滾動方向
-  if (preScroll > currentScrollPos) {
-    isNavbarVisible = true
-  } else {
-    isNavbarVisible = false
-  }
+    prevScrollPos = currentScrollPos;
+  });
 
-  // 顯示或隱藏
-  if (isNavbarVisible) {
-    header.style.top = '0'
-  } else {
-    header.style.top = '-85px' // 隱藏
-  }
-
-  preScroll = currentScrollPos
-
-  const newsBoxTop = newsBox.offsetTop
-  const scrollRange = 20 // 範圍
-  if (currentScrollPos >= newsBoxTop && currentScrollPos <= newsBoxTop + scrollRange && preScroll <= currentScrollPos) {
-    header.style.top = '0'
-    preScroll = currentScrollPos
-  }
+  // 頁面載入時顯示導航欄
+  window.addEventListener("DOMContentLoaded", () => {
+    header.style.top = "0";
+  });  
 }
 
-// 將整份文件封裝為一個對象並使用 export default 導出
-const myModule = {
+
+
+// heder全部內容一次打包導出
+const headers = {
   menu,
   links,
   close,
+  header,
+  prevScrollPos,
   menuDisplayToggle,
   closeDisplayToggle,
-  preScroll,
-  header,
-  newsBox,
-  isNavbarVisible
-}
+  scrollChange,
+};
 
-export default myModule
+export default headers;
