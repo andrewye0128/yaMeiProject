@@ -117,7 +117,6 @@ header {
   width: 100%;
   /* width: 375px; */
   height: 745px;
-  padding: 64px 12px;
   background-color: #ffffff;
   opacity: 1;
   background-image: linear-gradient(#edf6f6 0.8px, transparent 0.8px), linear-gradient(to right, #edf6f6 0.8px, #ffffff 0.8px);
@@ -164,39 +163,125 @@ header {
   color: #198783;
 }
 
-/* 
-.treatment-box .content {
+.carousel {
+  cursor: grab;
+  width: 95%;
+  margin: auto;
+  text-align: center;
+}
+
+
+.swiper-content {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.swiper-content::-webkit-scrollbar {
+  display: none;
+}
+
+.swiper-card {
+  width: 324px;
+  height: 248px;
+  margin-right: 26px;
+  background: linear-gradient(to right, #FFFFFF, #FFFFFF), linear-gradient(to right, #F0F0F0, #F0F0F0);
+  border: 2px solid #F0F0F0;
+  box-shadow: 4px 4px 0px 0px #F0F0F0;
+  border-radius: 20px;
+  flex: 0 0 324px;
+  text-align: left;
+  padding: 20px 10px;
+  position: relative;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.avatar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.treatment-box .review-card {
-  width: 100%;
-  max-width: 351px;
-  height: 242px;
-  margin-bottom: 24px;
+.avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-.treatment-name {
-  color: #363636;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: 1.6px;
-  margin-top: 20px;
-  margin-bottom: 12px;
+.star-rating {
+  white-space: nowrap;
 }
 
-.treatment-box .review-card .btn {
-  color: #666666;
-  background: #f0f0f0;
-  width: 108px;
-  height: 36px;
-  padding: 6px 20px;
-  border-radius: 25px;
+.star-rating [type="radio"] {
+  appearance: none;
 }
- */
+
+.star-rating i {
+  font-size: 1.2em;
+  padding-right: 5px;
+  transition: 0.3s;
+}
+
+.star-rating label:is(:hover, :has(~ :hover)) i {
+  transform: scale(1.35);
+  color: #fffdba;
+  animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
+}
+
+
+.star-rating label:has(~ :checked) i {
+  color: #faec1b;
+  text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
+}
+
+.card-content {
+  white-space: pre-line;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* 設定顯示 3 行 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.swiper-card.expanded {
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  /* 阴影效果，根据需要调整 */
+  z-index: 1;
+}
+
+.card-content.expanded {
+  white-space: normal;
+  display: block;
+  height: auto;
+}
+
+.more {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  text-decoration: none;
+}
+
+.recieve {
+  position: relative;
+  top: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@keyframes jump {
+
+  0%,
+  50% {
+    transform: translatey(0) scale(1.35);
+  }
+
+  100% {
+    transform: translatey(-15%) scale(1.35);
+  }
+}
+
+
 
 @media (min-width:451px) {
 
@@ -291,6 +376,15 @@ header {
 
   .time-font {
     width: 30%;
+  }
+
+  .swiper-card {
+    width: 416px;
+
+  }
+
+  .recieve {
+    top: 60px
   }
 
   /* .treatment-box .content {

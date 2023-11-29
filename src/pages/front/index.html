@@ -41,10 +41,11 @@
         </div>
       </div>
     </div>
-    <div class="news-box box-border inline-flex flex-col items-center lg:flex-row lg:justify-around">
-      <div class="news-title text-center md:flex flex-col items-center lg:items-baseline lg:mb-4">
+    <div
+      class="news-box box-border inline-flex flex-col px-3 py-16 items-center lg:flex-row lg:justify-around lg:px-224">
+      <div class="news-title text-center mb-10 md:flex flex-col items-center lg:items-baseline lg:mb-4">
         <h2 class="title-font mb-2">最新消息</h2>
-        <span class="E-font md:mb-32">News</span>
+        <span class="E-font lg:mb-32">News</span>
         <div class="doc hidden lg:block"><img src="/public/images/Doctors 1.png"></div>
       </div>
       <div class="news-items">
@@ -107,6 +108,62 @@
       </div>
     </div>
     <%- include('public/layouts/treatment-box.ejs') %>
+      <div class="swiper-box w-full overflow-hidden border-box px-3 py-16 md:px-40 md:py-16 lg:px-56">
+        <div class="swiper-title text-center mb-8 md:flex flex-col items-center md:items-baseline">
+          <h2 class="title-font mb-2">診所評價</h2>
+          <span class="E-font ">Reviews</span>
+        </div>
+        <div class="carousel">
+          <div class="swiper-content flex">
+            <div class="swiper-card">
+              <div class="avatar">
+                <img src="https://picsum.photos/300/200/?random=11">
+                <div class="name">Alanna
+                  <span class="star-rating flex text-primary-200">
+                    <label for="rate-1" style="--i: 1"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="1">
+                    <label for="rate-2" style="--i: 2"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="2" checked>
+                    <label for="rate-3" style="--i: 3"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="3">
+                    <label for="rate-4" style="--i: 4"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="4">
+                    <label for="rate-5" style="--i: 5"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="5">
+                  </span>
+                </div>
+              </div>
+              <div class="card-content">醫生細心、護士體貼，雖然不是從小看到大，但也看診了快8年，另人依賴又放心。
+              </div>
+              <a class="more text-primary-400">閱讀更多</a>
+            </div>
+            <div class="swiper-card">
+              <div class="avatar">
+                <img src="https://picsum.photos/300/200/?random=12">
+                <div class="name">江筱璐
+                  <span class="star-rating flex text-primary-200">
+                    <label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="1">
+                    <label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="2">
+                    <label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="3">
+                    <label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="4">
+                    <label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="5">
+                  </span>
+                </div>
+              </div>
+              <div class="card-content">吳醫師真的好帥~~~~
+              </div>
+              <a class="more text-primary-400">閱讀更多</a>
+            </div>
+          </div>
+          <button class="recieve bg-primary-300 mx-auto w-[124px] h-[44px] md:w-[166px] md:h-[61px]">我要評論</button>
+        </div>
+      </div>
+
 
       <%- include('public/layouts/footer.ejs') %>
 
