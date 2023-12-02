@@ -9,23 +9,6 @@ const swiper = {
       const cardSuffix = cardIndex + 1
       const stars = card.querySelectorAll('.star-rating [type="radio"]')
 
-      // stars.forEach((star) => {
-      //   star.addEventListener('change', () => {
-      //     // console.log('Change event triggered')
-      //     const rating = parseInt(star.value)
-
-      //     // 將星星值更新到資料庫
-      //     this.setRatingToDatabase(cardIndex, rating)
-
-      //     // 更新星星樣式
-      //     stars.forEach((s) => {
-      //       const sSuffix = parseInt(s.value)
-      //       s.checked = sSuffix <= rating
-      //     })
-      //   })
-      // })
-
-      // 獲取資料庫的星星值
       const ratingFromDatabase = 5
 
       // 設定星星的初始狀態
@@ -195,4 +178,60 @@ const swiper = {
   }
 }
 
-export default swiper
+const dialog = {
+  init: function () {
+    console.log(localStorage)
+    const dialog = document.getElementById('dialog')
+    const closeBtn = document.getElementById('closeBtn')
+    const button = document.querySelector('.recieve')
+    let down = false
+    button.addEventListener('click', (e) => {
+      e.preventDefault()
+      down = true
+      if (down) {
+        dialog.style.display = 'block'
+      }
+    })
+    // 點擊關閉按鈕時隱藏對話框
+    closeBtn.addEventListener('click', (e) => {
+      down = false
+
+      e.preventDefault()
+      dialog.style.display = 'none'
+    })
+  },
+  submit: function () {
+    const inputRadios = document.querySelectorAll('.input-rating [type="radio"]')
+
+    inputRadios.forEach((radio) => {
+      radio.addEventListener('change', function () {
+        inputRadios.forEach((r, index) => {
+          const label = r.previousElementSibling
+          const starIcon = label.querySelector('i')
+          let count = 0 // 將 count 聲明為區域變數
+
+          if (index + 1 <= parseInt(radio.value)) {
+            console.log(`index: ${index + 1}`)
+            console.log(`this.value: ${parseInt(radio.value)}`)
+            starIcon.style.color = '#faec1b'
+            starIcon.style.textShadow = '0 0 2px #ffffff, 0 0 10px #ffee58'
+          } else {
+            starIcon.style.color = '' // Reset to default color
+            starIcon.style.textShadow = '' // Reset to default text shadow
+          }
+
+          count = radio.value
+          console.log(count)
+        })
+      })
+    })
+
+    const submit = document.querySelector('.submit')
+    submit.addEventListener('click', (e) => {
+      e.preventDefault()
+      console.log(e)
+    })
+  }
+}
+
+export { swiper, dialog }

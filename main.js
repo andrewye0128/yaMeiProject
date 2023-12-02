@@ -1,7 +1,8 @@
 import 'tailwindcss/tailwind.css'
 import headers from './src/js/header.js'
 import '@fortawesome/fontawesome-free/css/all.css'
-import swiper from './src/js/index.js'
+
+import { swiper, dialog } from './src/js/index.js'
 import {
   authSigns,
   authLogins,
@@ -22,8 +23,9 @@ document.addEventListener('DOMContentLoaded', async function () {
   swiper.rating()
   swiper.clickMore()
   swiper.init()
+  dialog.submit()
+  dialog.init()
 })
-
 // 註冊、登入頁面
 // 確認目前在哪個頁面上
 if (authSigns.signForm) {

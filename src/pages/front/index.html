@@ -184,6 +184,32 @@
           </div>
           <button
             class="recieve bg-primary-300 text-white active:bg-primary-400 mt-5 mx-auto w-[124px] h-[44px] md:w-[166px] md:mt-4 md:h-[61px]">我要評論</button>
+          <form id="dialog" class="dialog-container bg-white rounded">
+            <div class="dialog-header bg-primary-300 text-white h-[56px] w-full py-[16px] px-1 rounded-t">
+              <span>我要評論</span>
+              <button id="closeBtn" class="close-btn text-xl">×</button>
+            </div>
+            <div class="dialog-name flex flex-col justify-center items-center my-[1rem]">
+              <p>暱稱：<span>江江月</span></p>
+              <span class="input-rating flex text-primary-200">
+                <label for="star-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" value="1" id="star-1">
+                <label for="star-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" value="2" id="star-2">
+                <label for="star-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" value="3" id="star-3">
+                <label for="star-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" value="4" id="star-4">
+                <label for="star-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" value="5" id="star-5">
+              </span>
+            </div>
+            <div class="dialog-content">
+              <textarea class="bg-gray-200 rounded px-2 py-4" placeholder="留下評論..." cols="30" rows="10"></textarea>
+            </div>
+            <button
+              class="submit bg-primary-300 text-white active:bg-primary-400 mt-5 mx-auto w-[124px] h-[44px] md:w-[166px] md:mt-4 md:h-[61px] rounded">送出評論</button>
+          </form>
         </div>
       </div>
 

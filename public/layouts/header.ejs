@@ -65,10 +65,10 @@
 </div>
 
 <script>
-  console.log("路徑" + window.location.pathname);
-  console.log();
+  // console.log("路徑" + window.location.pathname);
+  // console.log();
   const pathNamesMap = {
-    '診所介紹': 'reservation',
+    '診所介紹': 'appointment',
     '服務項目': 'appointment',
     '醫護團隊': 'appointment',
     '診所預約': 'appointment',
@@ -79,19 +79,18 @@
   let page;
   const a = document.querySelectorAll('a');
 
-  for (const s of a) {
+  for (const s of a)
     const linkText = s.innerText.trim();
-    if (s.getElementsByTagName('img').length > 0) {
-      continue;
-    }
-    if (linkText === '登入/註冊') {
-      s.href = host + BASE_PATH + 'back/login.html';
-    } else if (pathNamesMap.hasOwnProperty(linkText)) {
-      // 对于其他链接应用动态生成路径的逻辑
-      s.href = host + BASE_PATH + 'front/' + pathNamesMap[linkText] + '.html';
-    }
+  if (s.getElementsByTagName('img').length > 0) {
+    continue;
+  }
+  if (linkText === '登入/註冊') {
+    s.href = host + BASE_PATH + 'back/login.html';
+  } else if (pathNamesMap.hasOwnProperty(linkText)) {
+    s.href = host + BASE_PATH + 'front/' + pathNamesMap[linkText] + '.html';
+  }
 
-    console.log(s.href);
+    // console.log(s.href);
   }
 
 </script>

@@ -195,6 +195,12 @@ header {
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
+.swiper-card:hover {
+  background: linear-gradient(to right, #FFFFFF, #FFFFFF), linear-gradient(to right, #C0E0DF, #C0E0DF);
+  border: 2px solid #C0E0DF;
+  box-shadow: 4px 4px 0px 0px #C0E0DF;
+}
+
 .avatar {
   display: flex;
   margin-bottom: 25px;
@@ -244,9 +250,8 @@ header {
 }
 
 .swiper-card.expanded {
-
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  /* 阴影效果，根据需要调整 */
+  border: 2px solid #C0E0DF;
+  box-shadow: 4px 4px 0px 0px #C0E0DF;
   z-index: 1;
 }
 
@@ -270,6 +275,32 @@ header {
   text-align: center;
 }
 
+.input-rating {
+  white-space: nowrap;
+}
+
+.input-rating [type="radio"] {
+  appearance: none;
+}
+
+.input-rating i {
+  font-size: 1.2em;
+  padding-right: 5px;
+  transition: 0.3s;
+}
+
+.input-rating label:is(:hover, :has(~ :hover)) i {
+  transform: scale(1.35);
+  color: #fffdba;
+  animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
+}
+
+
+/* .input-rating label:has(~ :checked) i {
+  color: #faec1b;
+  text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
+} */
+
 @keyframes jump {
 
   0%,
@@ -282,7 +313,29 @@ header {
   }
 }
 
+#dialog {
+  display: none;
+}
 
+.dialog-container {
+  width: 375px;
+  height: 655px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.dialog-header {
+  text-align: center;
+}
+
+.dialog-header button {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
 
 @media (min-width:451px) {
 
