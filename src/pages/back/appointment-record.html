@@ -10,73 +10,71 @@
 </head>
 
 <body>
-  <h1>預約紀錄</h1>
+  <div class="w-1/2 m-auto mt-20">
+    <div class="border-b-4 border-primary-300">
+    <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">預約紀錄</span>
+    </div>
 
-  <label for="date">日期:</label>
+    <div class="my-2">
+      <label for="date" class="pl-8">日&nbsp期&nbsp:&nbsp</label>
+    
+      <input type="date" name="" id="searchDate" class="pl-8">
+      </div>
 
-  <input type="date" name="" id="searchDate">
 
-
-  <table id="appointmentTable">
+  <table id="appointmentTable" class="w-full">
     <tr>
-      <th class="border border-slate-300"></th>
-      <th class="border border-slate-300">姓名</th>
-      <th class="border border-slate-300">性別</th>
-      <th class="border border-slate-300">生日</th>
-      <th class="border border-slate-300  px-3">預約時間</th>
-      <th class="border border-slate-300">看診原因</th>
-      <th class="border border-slate-300">修改/刪除</th>
+      <th class="border border-slate-300 w-1/12"></th>
+      <th class="border border-slate-300 w-1/12">姓名</th>
+      <th class="border border-slate-300 w-1/12">性別</th>
+      <th class="border border-slate-300 w-2/12">生日</th>
+      <th class="border border-slate-300 w-1/12">預約時間</th>
+      <th class="border border-slate-300 w-3/12">看診原因</th>
+      <th class="border border-slate-300 w-3/12">修改/刪除</th>
     </tr>
 
   </table>
 
-  <h1>新增預約</h1>
-  <div class="flex justify-content">
-    <div class="p-3 pr-4">
-      <label for="name">姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp名:</label>
-      <input type="text" name="name" id="" placeholder="請輸入姓名" class="name px-1 border border-black rounded-lg">
-      <span class="remindNameId"></span>
-    </div>
-    <div class="p-3">
-      <label for="idNum">身分證字號:</label>
-      <input type="text" name="idNum" id="" placeholder="請輸入身分證字號" class="idNum  px-1 border border-black rounded-lg">
-      <span class="remindIdNum"></span>
-    </div>
-  </div>
+  <div class="border-b-4 border-primary-300 mt-20 mb-6">
+    <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">新增預約</span>
+    </div>  
 
-  <div class="flex justify-content">
-    <div class="p-3 pr-16">
-      <label for="sex">性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp別:</label>
-      <input type="radio" name="sex" id="" value="男性" class="male mx-3">男性
-      <input type="radio" name="sex" id="" value="女性" class="female mx-3">女性
-    </div>
+    <table class="w-full mb-4">
+      <tr>
+        <td class="p-3"><label for="name">姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp名:</label>
+          <input type="text" name="name" id="" placeholder="請輸入姓名" class="name w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-primary-100 focus:outline-0 focus:border-[#1e4bd1]">
+          <span class="remindNameId"></span></td>
+        <td class="p-3">
+          <label for="idNum">身分證字號:</label>
+          <input type="text" name="idNum" id="" placeholder="請輸入身分證字號" class="idNum  w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-primary-100 focus:outline-0 focus:border-[#1e4bd1]">
+          <span class="remindIdNum"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="p-3"><label for="sex">性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp別:</label>
+          <input type="radio" name="sex" id="" value="男性" class="male mx-3">男性
+          <input type="radio" name="sex" id="" value="女性" class="female mx-3">女性</td>
+        <td class="p-3"><label for="birth">出&nbsp生&nbsp日&nbsp期:</label>
+          <input type="text" name="birth" id="" placeholder="YYYY/MM/DD" class="birth w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-primary-100 focus:outline-0 focus:border-[#1e4bd1]"></td>
+      </tr>
+      <tr>
+        <td class="p-3"><label for="date">預&nbsp約&nbsp日&nbsp期:</label>
+          <input type="date" name="date" id="date" class="px-1 w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-primary-100 focus:outline-0 focus:border-[#1e4bd1]"></td>
+        <td class="p-3"><label for="time">預&nbsp約&nbsp時&nbsp間:</label>
+          <input type="text" name="time" id="" placeholder="00:00" class="time  px-1 w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-primary-100 focus:outline-0 focus:border-[#1e4bd1]"></td>
+      </tr>
+      <tr>
+        <td class="p-3"><label for="cause">看&nbsp診&nbsp原&nbsp因:</label>
+          <input type="text" name="cause" id="" class="cause  px-1 w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-primary-100 focus:outline-0 focus:border-[#1e4bd1]"></td>
+        <td></td>
+      </tr>
 
-    <div class="p-3">
-      <label for="birth">出&nbsp生&nbsp日&nbsp期:</label>
-      <input type="text" name="birth" id="" placeholder="YYYY/MM/DD" class="birth  px-1 border border-black rounded-lg">
+    </table>
 
-    </div>
-  </div>
-
-  <div class="flex justify-content">
-    <div class="p-3 pr-4">
-      <label for="date">預&nbsp約&nbsp日&nbsp期:</label>
-      <input type="date" name="date" id="date" class="px-1 border border-black rounded-lg">
-
-    </div>
-    <div class="p-3">
-      <label for="time">預&nbsp約&nbsp時&nbsp間:</label>
-      <input type="text" name="time" id="" placeholder="00:00" class="time  px-1 border border-black rounded-lg">
-
-    </div>
-  </div>
-  <div class="p-3">
-    <label for="cause">看&nbsp診&nbsp原&nbsp因:</label>
-    <input type="text" name="cause" id="" class="cause  px-1 border border-black rounded-lg">
-
-  </div>
   <input type="button" value="新增"
     class="new px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+
+  </div>  
   <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   <script type="module" src="../../js/appointment-record.js"></script>
   <script type="module" src="../../../main.js"></script>
