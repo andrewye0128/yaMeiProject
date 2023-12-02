@@ -26,7 +26,7 @@ const swiper = {
       // })
 
       // 獲取資料庫的星星值
-      const ratingFromDatabase = 4
+      const ratingFromDatabase = 5
 
       // 設定星星的初始狀態
       stars.forEach((star, starIndex) => {

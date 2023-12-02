@@ -197,6 +197,7 @@ header {
 
 .avatar {
   display: flex;
+  margin-bottom: 25px;
 }
 
 .avatar img {
@@ -370,7 +371,7 @@ header {
   }
 
   .news-items .content {
-    max-width: 100%;
+    max-width: 500px;
     width: calc(856px * .75);
   }
 
@@ -417,6 +418,10 @@ header {
 
   .sologan-content {
     width: calc(520px * 0.75);
+  }
+
+  .news-box {
+    flex-direction: column;
   }
 
   /* .treatment-box .content {
