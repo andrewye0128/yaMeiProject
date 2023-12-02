@@ -25,7 +25,7 @@ const swiper = {
 
     try {
       const reviews = await api.get('/Review')
-      console.log(JSON.stringify(reviews.data))
+      // console.log(JSON.stringify(reviews.data))
       for (const [key, review] of Object.entries(reviews.data)) {
         // 創建評論卡片
         const createCard = document.createElement('div')
@@ -200,38 +200,97 @@ const dialog = {
       dialog.style.display = 'none'
     })
   },
-  submit: function () {
+  submit: async function () {
     const inputRadios = document.querySelectorAll('.input-rating [type="radio"]')
+    const submit = document.querySelector('.submit')
+    const dn = document.querySelector('.dialog-name')
+    const name = dn.children[0].children[0].innerText
+    const content = document.querySelector('.dialog-content').children[0]
+
+    // 獲取當前日期和時間
+    const today = new Date()
+    // 獲取年、月和日
+    const year = today.getFullYear()
+    // 月份是從0開始的，所以要加1
+    const month = (today.getMonth() + 1).toString().padStart(2, '0')
+    const day = today.getDate().toString().padStart(2, '0')
+    // 構建 yyyy-mm-dd 格式的日期字符串
+    const date = `${year}-${month}-${day}`
+    const form = {}
+    let count = 0
+
+    try {
+      const reviews = await api.get('/Review')
+      findData(reviews.data, inputRadios)
+    } catch (error) {
+      console.error('Error fetching reviews:', error)
+    }
+
+    function setStarStyles(radio, count) {
+      const label = radio.previousElementSibling
+      const starIcon = label.querySelector('i')
+
+      if (parseInt(radio.value) <= count) {
+        starIcon.style.color = '#faec1b'
+        starIcon.style.textShadow = '0 0 2px #ffffff, 0 0 10px #ffee58'
+      } else {
+        starIcon.style.color = '' // Reset to default color
+        starIcon.style.textShadow = '' // Reset to default text shadow
+      }
+    }
+
+    function updateStarStyles(inputRadios, count) {
+      inputRadios.forEach((radio) => {
+        setStarStyles(radio, count)
+      })
+    }
 
     inputRadios.forEach((radio) => {
       radio.addEventListener('change', function () {
-        inputRadios.forEach((r, index) => {
-          const label = r.previousElementSibling
-          const starIcon = label.querySelector('i')
-          let count = 0 // 將 count 聲明為區域變數
-
-          if (index + 1 <= parseInt(radio.value)) {
-            console.log(`index: ${index + 1}`)
-            console.log(`this.value: ${parseInt(radio.value)}`)
-            starIcon.style.color = '#faec1b'
-            starIcon.style.textShadow = '0 0 2px #ffffff, 0 0 10px #ffee58'
-          } else {
-            starIcon.style.color = '' // Reset to default color
-            starIcon.style.textShadow = '' // Reset to default text shadow
-          }
-
-          count = radio.value
-          console.log(count)
-        })
+        count = parseInt(radio.value)
+        updateStarStyles(inputRadios, count)
+        console.log(count)
       })
     })
 
-    const submit = document.querySelector('.submit')
-    submit.addEventListener('click', (e) => {
+    function findData(datas, inputRadios) {
+      for (const data of datas) {
+        if (data.name === name) {
+          content.value = data.content
+          const rating = parseInt(data.rating)
+          count = rating
+          updateStarStyles(inputRadios, rating)
+          break // 找到後中斷迴圈
+        }
+      }
+    }
+
+    submit.addEventListener('click', async (e) => {
       e.preventDefault()
-      console.log(e)
+
+      form.name = name
+      form.rating = count
+      form.content = content.value
+      form.date = date
+
+      try {
+        const reviews = await api.get('/Review')
+
+        const existingReview = reviews.data.find((data) => data.name === name)
+        if (existingReview) {
+          const response = await api.put(`/Review/${existingReview.id}`, form)
+          console.log('Review updated successfully:', response.data)
+        } else {
+          const response = await api.post('/Review', form)
+          console.log('Review submitted successfully:', response.data)
+        }
+      } catch (error) {
+        // 處理錯誤
+        console.error('Error submitting/updating review:', error)
+      }
     })
   }
+
 }
 
 export { swiper, dialog }
