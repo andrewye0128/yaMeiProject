@@ -63,37 +63,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  // console.log("路徑" + window.location.pathname);
-  // console.log();
-  const pathNamesMap = {
-    '診所介紹': 'appointment',
-    '服務項目': 'appointment',
-    '醫護團隊': 'appointment',
-    '診所預約': 'appointment',
-  };
-
-  // const host = window.location.origin;
-  // console.log(window.location.pathname)
-  // 開發用請使用這個路徑
-  // const BASE_PATH = "/yaMeiProject/src/pages/front/";
-  const BASE_PATH = "/yaMeiProject/front"
-  let page;
-  const a = document.querySelectorAll('a');
-
-  for (const s of a) {
-    const linkText = s.innerText.trim();
-    if (s.getElementsByTagName('img').length > 0) {
-      continue;
-    }
-    if (linkText === '登入/註冊') {
-      s.href = host + BASE_PATH + 'back/login.html';
-    } else if (pathNamesMap.hasOwnProperty(linkText)) {
-      s.href = host + BASE_PATH + pathNamesMap[linkText] + '.html';
-    }
-
-    console.log(s.href);
-  }
-
-</script>

@@ -19,6 +19,7 @@ headers.scrollChange()
 
 // index 評價
 document.addEventListener('DOMContentLoaded', async function () {
+  headers.aLink()
   await swiper.getRatingDatabase() // Wait for database ratings to be fetched
   swiper.rating()
   swiper.clickMore()
