@@ -50,15 +50,15 @@ function aLink() {
   const host = window.location.origin
   // console.log(window.location.pathname)
   // 開發用請使用這個路徑
-  // const BASE_PATH = "/yaMeiProject/src/pages/front/";
-  const BASE_PATH = '/yaMeiProject/front'
+  // const BASE_PATH = '/yaMeiProject/src/pages/front/'
+  const BASE_PATH = '/yaMeiProject/front/'
   let page
   const a = document.querySelectorAll('a')
 
   for (const s of a) {
     const linkText = s.innerText.trim()
     if (s.getElementsByTagName('img').length > 0) {
-      continue
+      s.href = host + BASE_PATH + 'index.html'
     }
     if (linkText === '登入/註冊') {
       s.href = host + BASE_PATH + 'back/login.html'
