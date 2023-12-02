@@ -10,35 +10,41 @@
 </head>
 
 <body>
-  <h1>看診清單</h1>
+  <div class="w-1/2 m-auto mt-20">
+  <div class="border-b-4 border-primary-300">
+  <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">看診清單</span>
+  </div>
 
-  <label for="date">日期:</label>
+  <div class="my-2">
+  <label for="date" class="pl-8">日&nbsp期&nbsp:&nbsp</label>
 
-  <input type="date" name="" id="searchDate">
-
-
-  <table id="appointmentTable">
+  <input type="date" name="" id="searchDate" class="pl-8">
+  </div> 
+  
+  <table id="appointmentTable" class="w-full">
     <tr>
-      <th class="border border-slate-300"></th>
-      <th class="border border-slate-300">姓名</th>
-      <th class="border border-slate-300">性別</th>
-      <th class="border border-slate-300">生日</th>
-      <th class="border border-slate-300  px-3">病歷</th>
-      <th class="border border-slate-300">看診狀態</th>
+      <th class="border border-slate-300 w-1/12"></th>
+      <th class="border border-slate-300 w-2/12">姓名</th>
+      <th class="border border-slate-300 w-2/12">性別</th>
+      <th class="border border-slate-300 w-2/12">生日</th>
+      <th class="border border-slate-300  px-3 w-2/12">病歷</th>
+      <th class="border border-slate-300 w-3/12">看診狀態</th>
     </tr>
 
   </table>
+  <div class="border-b-4 border-primary-300 my-20 ">
+  <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">叫號系統</span>
+  </div>
 
-  <h1>叫號系統</h1>
 
-  <span>目前看診號碼</span>
-  <span class="num">0</span>
+  <span class="text-xl">目前看診號碼&nbsp:&nbsp</span>
+  <span class="num text-5xl font-black p-8">0</span>
 
   <input type="button" value="下一號"
-    class="nextBtn px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+    class="nextBtn px-3 mx-6 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
   <input type="button" value="歸零"
     class="zeroBtn px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
-
+  </div>
   <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   <script type="module" src="../../js/appointment-list.js"></script>
   <script type="module" src="../../../main.js"></script>

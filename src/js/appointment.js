@@ -2,7 +2,7 @@
 axios.get('http://localhost:4000/Appointment')
   .then(function (response) {
     const data = response.data
-    console.log(data)
+   
     // 渲染資料到畫面上
     function renderInfo(targetHTML) {
       const inquireInfo = document.querySelector('.inquireInfo')
@@ -12,9 +12,9 @@ axios.get('http://localhost:4000/Appointment')
     function generateInquireHTML(targetInfo) {
       return targetInfo
         .map((data) => {
-          return `<div class="bg-white">
-  <h3 class="bg-primary-300 text-center px-12 text-white">預約訊息</h3>
-  <div class="bg-white p-3">
+          return `<div class="bg-white mt-5">
+     <h3 class="bg-primary-300 text-center px-12 text-white">預約訊息</h3>
+     <div class="bg-white p-3">
      <h4 class="text-center px-12 text-primary-300 ">症狀</h4>
      <p class="departCheck p-3 text-center ">${data.depart}</p>
      <p class="symptomCheck p-3 text-center ">${data.symptom}</p>
@@ -23,14 +23,18 @@ axios.get('http://localhost:4000/Appointment')
      <p class="timeCheck p-3 text-center ">${data.time}</p>
      <h4 class="text-center px-12 text-primary-300">看診號碼</h4>
 
-  </div>
-</div>`
+     </div>
+     </div>`
         })
     }
 
     document.querySelector('[data-appointmentInfo-form]').addEventListener('submit', (e) => {
       e.preventDefault()
+      if (inquireFilter(e.target.searchIdNum.value).length > 0 ){
       renderInfo(generateInquireHTML(inquireFilter(e.target.searchIdNum.value)))
+    }else{
+      alert(`查無此資料`)
+    }
     })
 
     function inquireFilter(targetInfo, allAppointment = data) {

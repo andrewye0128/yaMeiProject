@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 設定css路徑 -->
+  <link rel="stylesheet" href="/src/css/tailwind.css">
+  <title>芽渼牙醫診所</title>
+</head>
+
+<body>
+  <div class="w-1/2 m-auto mt-20">
+  
+  <!-- 搜尋病歷 -->
+   <div class="text-center">
+   <label for="medicalRecordNum" >病歷號碼:</label>
+   <input type="text" name="medicalRecordNum" id="" class="px-1 border border-black rounded-lg">
+   <label for="name" class="ml-20">姓名:</label>
+   <input type="text" name="name" id="" class="px-1 border border-black rounded-lg">
+   <input type="button" value="搜尋" class="new px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+  </div>
+  <!-- 病歷資料 -->
+   <div class="w-full">
+    <div class="border-b-4 border-primary-300 my-8">
+      <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">基本資料</span>
+      </div>
+
+  <!-- 病歷資料顯示 -->
+
+   
+        <table class="w-full">
+         <tr>
+           <td class="border border-slate-300 w-1/3 pl-6"><span class="font-black pr-4">姓名 : </span><span>王曉曉</span></td>
+           <td class="border border-slate-300 w-1/3 pl-6"><span class="font-black pr-4">生日 : </span>1996/01/02</td>
+           <td class="border border-slate-300 w-1/3 pl-6"><span class="font-black pr-4">身分證字號 : </span>F123987456</td>
+         </tr>
+         <tr>
+           <td class="border border-slate-300 pl-6"><span class="font-black pr-4">性別 : </span>女性</td>
+           <td class="border border-slate-300 pl-6"><span class="font-black pr-4">手機 : </span>0912345678</td>
+           <td class="border border-slate-300 pl-6"><span class="font-black pr-4">E-mail : </span>asdf@gmail.com</td>
+         </tr>
+        </table>
+       </div>
+
+
+   <!-- 就醫紀錄 -->
+   <div>
+      <div class="border-b-4 border-primary-300 my-8">
+      <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg ">就醫紀錄</span>
+      </div>
+    <input type="button" value="新增" class="new px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer mb-5">
+    <input type="button" value="刪除" class="new px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+
+      <table class="w-full">
+       <tr>
+         <th class="border border-slate-300 w-1/4 px-5">看診日期</th>
+         <th class="border border-slate-300 w-1/4 px-5">時間</th>
+         <th class="border border-slate-300 w-1/4 px-5">看診原因</th>
+         <th class="border border-slate-300 w-1/4 px-5">病歷</th>
+       </tr>
+       <tr>
+         <td class="border border-slate-300 text-center">2023-11-10</td>
+         <td class="border border-slate-300 text-center">19:00</td>
+         <td class="border border-slate-300 text-center">蛀牙</td>
+         <td class="border border-slate-300 text-center text-primary-300 underline"><a href="#">病歷</a></td>
+       </tr>
+       <tr>
+         <td class="border border-slate-300 text-center">2023-11-24</td>
+         <td class="border border-slate-300 text-center">19:00</td>
+         <td class="border border-slate-300 text-center">蛀牙回診</td>
+         <td class="border border-slate-300 text-center text-primary-300 underline"><a href="#">病歷</a></td>
+       </tr>
+      </table>
+    
+
+  <!-- 病歷 -->
+  
+    <div class="border-b-4 border-primary-300 my-8">
+      <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">病歷</span>
+    </div>
+    
+    <img src="https://www.itooth.com.tw/images/ct/p-001.jpg" alt="" class="w-6/12 mx-auto  pb-10">
+    <img src="https://instagram.ftpe7-4.fna.fbcdn.net/v/t1.15752-9/370153757_363167302931445_6637958617161094848_n.jpg?stp=dst-jpg_p320x320&_nc_cat=105&ccb=1-7&_nc_sid=510075&_nc_ohc=EnK7-_gWf2gAX8uyuoN&_nc_ht=instagram.ftpe7-4.fna&oh=03_AdRnIPVQ1alKVgTgLgZSGpFYsakACxVxa4F3WNdC3vNA7g&oe=658A9E8E" alt="" class="w-6/12 mx-auto ">
+    
+  
+</div>
+</div>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="../../js/medical-record.js"></script>
+</body>
+
+</html>
