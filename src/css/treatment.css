@@ -1,0 +1,411 @@
+.primary-100 {
+    background-color: #E9F7F6;
+  }
+  
+  .primary-200 {
+    background-color: #C0E0DF;
+  }
+  
+  .primary-300 {
+    background-color: #66BAB7;
+  }
+  
+  .primary-400 {
+    background-color: #198783;
+  }
+  
+  header {
+    transition: top 0.3s;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  .banner {
+    width: 100%;
+    height: 640px;
+  }
+  
+  .banner .container {
+    height: 680px;
+    padding: 64px 0;
+  }
+  
+  
+  .banner .container .pic img {
+    max-height: 17rem;
+    object-fit: cover;
+    margin: auto;
+  }
+  
+  
+  
+  .banner .container .sologan {
+    width: 100%;
+    max-width: 293px;
+    max-height: 17rem;
+    margin: 0 64px;
+    padding: 0 12px;
+  }
+  
+  
+  
+  .sologan-content {
+    position: relative;
+    width: 100%;
+    height: calc(320px * 0.75);
+  }
+  
+  .sologan-content span {
+    position: absolute;
+    top: 0.5rem;
+    right: 0rem;
+  }
+  
+  .sologan-content span svg {
+    width: 80px;
+    height: 60px;
+  }
+  
+  .sologan-content::before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    border-bottom: 2px solid #C0E0DF;
+    padding-top: calc(80px * 0.75);
+  }
+  
+  .sologan-content::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    border-bottom: 2px solid #C0E0DF;
+    padding-top: calc(80px * 0.75);
+  }
+  
+  
+  
+  .sologan-content h2 {
+    font-weight: 900;
+    width: calc(378 * 0.75);
+    font-size: calc(30px * 0.75);
+    line-height: calc(38px * 0.75);
+    color: #363636;
+    letter-spacing: 0.02em;
+  }
+  
+  .sologan-content h1 {
+    font-weight: 900;
+    font-size: calc(40px * 0.75);
+    line-height: calc(48px * 0.75);
+    color: #363636;
+    letter-spacing: 0.08em;
+  }
+  
+  .bookingBtn {
+    width: 124px;
+    height: 44px;
+    background: #66BAB7;
+    position: absolute;
+    bottom: calc(2rem * 0.75);
+    right: 0;
+    font-weight: 700;
+    font-size: calc(24px * 0.75);
+    line-height: calc(29px * 0.75);
+    letter-spacing: 0.08em;
+  }
+  
+  .news-box {
+    width: 100%;
+    padding: 64px 12px;
+    background-color: #ffffff;
+    opacity: 1;
+    background-image: linear-gradient(#edf6f6 0.8px, transparent 0.8px), linear-gradient(to right, #edf6f6 0.8px, #ffffff 0.8px);
+    background-size: 16px 16px;
+  }
+  
+  .news-items .content {
+    max-width: 351px;
+  }
+  
+  .title-font {
+    font-family: 'Noto Sans TC';
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+    letter-spacing: 0.08em;
+  }
+
+  .treat-font {
+    font-family: 'Noto Sans TC';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0.08em;
+    color: #198783;
+  }
+  
+  .E-font {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.08em;
+    color: #198783;
+  }
+  
+  .time-font {
+    font-family: "Noto Sans TC";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+    color: #363636;
+  }
+  
+  .item-font {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    /* color: #198783; */
+  }
+  
+  /* 
+  .treatment-box .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .treatment-box .review-card {
+    width: 100%;
+    max-width: 351px;
+    height: 242px;
+    margin-bottom: 24px;
+  }
+  
+  .treatment-name {
+    color: #363636;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 1.6px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .treatment-box .review-card .btn {
+    color: #666666;
+    background: #f0f0f0;
+    width: 108px;
+    height: 36px;
+    padding: 6px 20px;
+    border-radius: 25px;
+  }
+   */
+  
+  @media (min-width:451px) {
+  
+    .banner .container .pic img {
+      max-height: auto;
+    }
+  
+    .banner .container .sologan {
+      width: 63%;
+      margin: 0 12px;
+    }
+  
+    /* .news-box {
+      width: 100%;
+    } */
+  }
+  
+  @media (min-width:768px) {
+    .banner {
+      height: calc(800px * 0.75);
+    }
+  
+  
+    .banner .container .pic {
+      max-width: calc(648px * 0.75);
+      padding: 0;
+    }
+  
+    .banner .container .pic img {
+      max-height: calc(600px * 0.75);
+    }
+  
+    .banner .container .sologan {
+      /* width: auto;  */
+      max-width: calc(648px * 0.5);
+      max-height: calc(480px * 0.75);
+      padding: calc(60px * 0.75) 0;
+      margin: 0;
+    }
+  
+    .sologan-content {
+      width: calc(520px * 0.5);
+    }
+  
+    .sologan-content span {
+      top: -1.2rem;
+    }
+  
+    .sologan-content span svg {
+      width: 120px;
+      height: 90px;
+    }
+  
+    .sologan-content::after {
+      padding-top: calc(120px * 0.75);
+    }
+  
+    .bookingBtn {
+      width: calc(166px * 0.75);
+      height: calc(61px * 0.75);
+      bottom: calc(-.2rem * 0.75);
+    }
+  
+    .title-font {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 38px;
+      letter-spacing: 0.08em;
+      text-align: left;
+    }
+  
+    .E-font {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      letter-spacing: 0.08em;
+      text-align: left;
+    }
+  
+    .E-font::after {
+      content: "";
+      width: 100px;
+      display: inline-block;
+      margin: 4px;
+      border: 1.5px solid #198783;
+    }
+  
+    .news-items .content {
+      max-width: 100%;
+      width: calc(856px * .75);
+    }
+  
+    .time-font {
+      width: 30%;
+    }
+  
+    /* .treatment-box .content {
+      max-width: calc(1296px * .75);
+    } */
+  
+    /* .treatment-box .content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    } */
+  
+    /* .treatment-title {
+      font-size: 28px;
+      margin-top: 40px;
+      margin-bottom: 24px;
+    } */
+  
+    /* .treatment-box .review-card {
+      max-width: 293px;
+      max-width: 48%;
+      height: calc(396px * .75);
+    } */
+  }
+  
+  @media (min-width: 1075px) {
+    .banner .container .sologan {
+      max-width: calc(648px * 0.75);
+    }
+  
+    .sologan-content {
+      width: calc(520px * 0.75);
+    }
+  
+    /* .treatment-box .content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    } */
+    /* 
+    .treatment-box .review-card {
+      max-width: 31%;
+    } */
+  }
+  
+  @media (min-width: 1900px) {
+  
+    .banner {
+      height: 800px;
+    }
+  
+    .banner .container .pic img {
+      max-height: 600px;
+    }
+
+    img, video {
+        /* max-width: 100%; */
+        height: auto;
+      }
+  
+    .banner .container .sologan {
+      max-width: 648px;
+      max-height: 480px;
+      /* padding: 80px 50px; */
+    }
+  
+    .sologan-content {
+      width: 520px;
+      height: 320px;
+    }
+  
+    .sologan-content span {
+      position: absolute;
+      top: 0;
+      right: 0rem;
+    }
+  
+  
+    .sologan-content::before {
+      padding-top: 80px;
+    }
+  
+    .sologan-content::after {
+      padding-top: 120px;
+    }
+  
+    .sologan-content h2 {
+      font-size: 31px;
+      line-height: 38px;
+    }
+  
+    .sologan-content h1 {
+      font-size: 40px;
+      line-height: 48px;
+    }
+  
+    .bookingBtn {
+      width: 166px;
+      height: 61px;
+      bottom: -.2rem;
+      font-size: 24px;
+      line-height: 29px;
+    }
+  
+    .news-items .content {
+      max-width: 856px;
+    }
+  }

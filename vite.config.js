@@ -6,12 +6,12 @@ import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import { glob } from 'glob'
 
-function moveOutputPlugin() {
+function moveOutputPlugin () {
   return {
     name: 'move-output',
     enforce: 'post',
     apply: 'build',
-    async generateBundle(options, bundle) {
+    async generateBundle (options, bundle) {
       for (const fileName in bundle) {
         if (fileName.startsWith('src/pages/')) {
           const newFileName = fileName.slice('src/pages/'.length)
