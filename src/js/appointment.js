@@ -1,3 +1,13 @@
+//目前看診號碼
+const nowNum = document.querySelector('.nowNum');
+
+function getNum(){
+  let callNumberStr = localStorage.getItem('callNumber') ;
+  nowNum.textContent = `${callNumberStr}`;
+}
+
+getNum();
+
 // 查詢預約資訊
 axios.get('http://localhost:4000/Appointment')
   .then(function (response) {
