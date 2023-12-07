@@ -168,3 +168,16 @@
     }
   }
 </style>
+
+<script>
+  let links = document.querySelectorAll('a')
+  const host = window.location.origin
+  // 開發用請使用這個路徑
+  // const BASE_PATH = '/yaMeiProject/src/pages/front/'
+  const BASE_PATH = '/yaMeiProject/front/'
+
+
+  for (let link of links) {
+    link.href = host + BASE_PATH + 'treatment.html'
+  }
+</script>

@@ -50,8 +50,8 @@ function aLink() {
   const host = window.location.origin
   // console.log(window.location.pathname)
   // 開發用請使用這個路徑
-  const BASE_PATH = '/yaMeiProject/src/pages/front/'
-  // const BASE_PATH = '/yaMeiProject/front/'
+  // const BASE_PATH = '/yaMeiProject/src/pages/front/'
+  const BASE_PATH = '/yaMeiProject/front/'
   let page
   const a = document.querySelectorAll('a')
 
@@ -61,7 +61,8 @@ function aLink() {
       s.href = host + BASE_PATH + 'index.html'
     }
     if (linkText === '登入/註冊') {
-      s.href = host + BASE_PATH + 'back/login.html'
+      // s.href = host + '/yaMeiProject/src/pages/back/login.html'
+      s.href = host + '/yaMeiProject/back/login.html'
     } else if (pathNamesMap.hasOwnProperty(linkText)) {
       s.href = host + BASE_PATH + pathNamesMap[linkText] + '.html'
     }
