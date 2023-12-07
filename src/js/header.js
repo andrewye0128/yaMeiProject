@@ -41,17 +41,17 @@ function aLink() {
   // console.log("路徑" + window.location.pathname);
   // console.log();
   const pathNamesMap = {
-    診所介紹: 'appointment',
-    服務項目: 'appointment',
-    醫護團隊: 'appointment',
+    診所介紹: 'clinic-intro',
+    服務項目: 'treatment',
+    醫護團隊: 'medical-team',
     診所預約: 'appointment'
   }
 
   const host = window.location.origin
   // console.log(window.location.pathname)
   // 開發用請使用這個路徑
-  // const BASE_PATH = '/yaMeiProject/src/pages/front/'
-  const BASE_PATH = '/yaMeiProject/front/'
+  const BASE_PATH = '/yaMeiProject/src/pages/front/'
+  // const BASE_PATH = '/yaMeiProject/front/'
   let page
   const a = document.querySelectorAll('a')
 
