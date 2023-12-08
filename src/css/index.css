@@ -473,9 +473,9 @@ header {
     width: calc(520px * 0.75);
   }
 
-  .news-box {
+  /* .news-box {
     flex-direction: column;
-  }
+  } */
 
   /* .treatment-box .content {
     flex-direction: row;
