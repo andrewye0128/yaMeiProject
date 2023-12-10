@@ -344,6 +344,110 @@ header {
   top: 12px;
 }
 
+.clinc-img {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clinic-title {
+
+  height: 30px;
+  margin-top: 1rem;
+  /* Body/fs-6 */
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  /* identical to box height, or 188% */
+  letter-spacing: 0.03em;
+
+  /* Primary/400 */
+  color: #198783;
+}
+
+.clinic-schedule {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.schedule {
+  display: flex;
+  width: 351px;
+  height: auto;
+  background: #FFFFFF;
+  border: 1px solid #F0F0F0;
+  border-radius: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.week {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #F0F0F0;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.time-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-family: 'Noto Sans TC';
+}
+
+.time-label p {
+  width: 61px;
+  height: 60px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #F0F0F0;
+}
+
+.day {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Noto Sans TC';
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  color: #363636;
+  border-top: 1px solid #F0F0F0;
+  position: relative;
+}
+
+.time-slot {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  color: #363636;
+  border-top: 1px solid #F0F0F0;
+  position: relative;
+  height: 60px;
+}
+
+
+.dot {
+  width: 8px;
+  height: 8px;
+
+  background: #66BAB7;
+  border-radius: 50%;
+}
+
 @media (min-width:451px) {
 
   .banner .container .pic img {
@@ -478,6 +582,32 @@ header {
 
   .sologan-content {
     width: calc(520px * 0.75);
+  }
+
+  .clinc-img {
+    flex-direction: row;
+    align-items: flex-start
+  }
+
+  iframe {
+    width: 60%;
+  }
+
+  .phone {
+    justify-content: flex-start;
+  }
+
+  .schedule {
+    width: 100%;
+  }
+
+  .mo {
+    width: 100%;
+  }
+
+  .time-label p {
+    font-size: 10px;
+    font-weight: 700;
   }
 
   /* .news-box {
