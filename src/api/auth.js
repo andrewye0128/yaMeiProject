@@ -4,7 +4,8 @@ import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm'
 // import Swal from "sweetalert2";
 
 // 共同路徑
-const authURL = 'https://yameiproject.onrender.com'
+const authURL = ' http://localhost:4000'
+// const authURL = 'https://yameiproject.onrender.com'
 let authToken = ''
 const userInfo = []
 

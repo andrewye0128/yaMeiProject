@@ -67,7 +67,7 @@ function aLink() {
       s.href = host + BASE_PATH + pathNamesMap[linkText] + '.html'
     }
 
-    console.log(s.href)
+    // console.log(s.href)
   }
 }
 

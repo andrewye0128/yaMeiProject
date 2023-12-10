@@ -1,6 +1,131 @@
 import axios from 'axios'
 const api = axios.create({ baseURL: import.meta.env.VITE_API })
 
+const news = {
+  currentPage: 1,
+  itemsPerPage: 5,
+  formattedNews: [],
+  getNewsData: async function () {
+    try {
+      const response = await api.get('/News')
+      const serverData = response.data
+      console.log(serverData)
+      // Static data
+      const staticData = [
+        {
+          id: 1,
+          title: '小孩都有刷牙，為何仍蛀牙了？',
+          content: '...',
+          date: '2023-12-10'
+        },
+        {
+          id: 2,
+          title: '兒童口腔衛教講座親子同場學習',
+          content: '...',
+          date: '2023-11-10'
+        }
+        // Add more static data if needed
+      ]
+
+      // Combine static data with server data
+      const combinedData = [...staticData, ...serverData]
+
+      // Map and format the combined data
+      this.formattedNews = combinedData.map((newsItem) => {
+        return {
+          id: newsItem.id,
+          title: newsItem.title,
+          content: newsItem.content,
+          date: newsItem.date ? new Date(newsItem.date).toISOString().split('T')[0] : 'N/A'
+        }
+      })
+
+      const newsList = document.querySelector('.content ul')
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage
+      const endIndex = startIndex + this.itemsPerPage
+      const currentNews = this.formattedNews.slice(startIndex, endIndex)
+
+      // Clear existing items in the list
+      newsList.innerHTML = ''
+
+      // Add news items to the list
+      currentNews.forEach((newsItem) => {
+        const listItem = createNewsListItem(newsItem)
+        newsList.appendChild(listItem)
+      })
+
+      // Update pagination buttons
+      this.updatePaginationButtons()
+    } catch (error) {
+      console.error('Error fetching news data:', error)
+    }
+  },
+
+  updatePaginationButtons: function () {
+    const totalPages = Math.ceil(this.formattedNews.length / this.itemsPerPage)
+
+    // Clear existing pagination buttons
+    const paginationContainer = document.querySelector('.pagination')
+    paginationContainer.innerHTML = ''
+
+    // Create and append pagination buttons for the current visible range
+    const startPage = Math.max(1, this.currentPage - 2)
+    const endPage = Math.min(totalPages, this.currentPage + 2)
+
+    for (let i = startPage; i <= endPage; i++) {
+      const pageButton = document.createElement('div')
+      pageButton.classList.add(
+        'h-10',
+        'w-10',
+        'flex',
+        'items-center',
+        'justify-center',
+        'text-gray-600',
+        'text-lg',
+        'rounded-full',
+        'transition',
+        'duration-300',
+        'hover:bg-yellow-100'
+      )
+      pageButton.textContent = i
+      pageButton.addEventListener('click', () => this.handlePageChange(i))
+      paginationContainer.appendChild(pageButton)
+    }
+  },
+
+  handlePageChange: function (page) {
+    if (this.currentPage !== page) {
+      this.currentPage = page
+
+      // Clear existing items in the list
+      const newsList = document.querySelector('.content ul')
+      newsList.innerHTML = ''
+
+      // Get and display news data for the new page
+      this.getNewsData()
+    }
+  }
+}
+
+function createNewsListItem(news) {
+  const listItem = document.createElement('li')
+  listItem.classList.add(
+    'border-b-2',
+    'border-solid',
+    'border-primary-100',
+    'px-3',
+    'py-5',
+    'md:border-b-0',
+    'md:px-10',
+    'md:flex'
+  )
+  listItem.innerHTML = `
+    <span class="time-font">${news.date}</span>
+    <p class="item-font">${news.title}</p>
+  `
+  return listItem
+}
+
 const swiper = {
   rating: function () {
     const swiperCards = document.querySelectorAll('.swiper-card')
@@ -293,4 +418,4 @@ const dialog = {
 
 }
 
-export { swiper, dialog }
+export { swiper, dialog, news }

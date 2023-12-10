@@ -2,7 +2,7 @@ import 'tailwindcss/tailwind.css'
 import headers from './src/js/header.js'
 import '@fortawesome/fontawesome-free/css/all.css'
 
-import { swiper, dialog } from './src/js/index.js'
+import { swiper, dialog, news } from './src/js/index.js'
 import {
   authSigns,
   authLogins,
@@ -20,6 +20,9 @@ headers.scrollChange()
 // index 評價
 document.addEventListener('DOMContentLoaded', async function () {
   headers.aLink()
+  await news.getNewsData()
+  news.updatePaginationButtons()
+  news.handlePageChange(1)
   await swiper.getRatingDatabase() // Wait for database ratings to be fetched
   swiper.rating()
   swiper.clickMore()
