@@ -610,6 +610,10 @@ header {
     font-weight: 700;
   }
 
+  .clinc-img {
+    justify-content: space-around;
+  }
+
   /* .news-box {
     flex-direction: column;
   } */
