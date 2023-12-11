@@ -7,6 +7,10 @@ import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm'
 // const authURL = ' http://localhost:4000'
 const authURL = 'https://yameiproject.onrender.com'
 let authToken = ''
+const host = window.location.origin
+const BASE_PATH = '/yaMeiProject/'
+const front = 'front/'
+const back = 'back/'
 const userInfo = []
 
 // 抓取節點
@@ -82,7 +86,7 @@ const signUp = async () => {
     console.log(response.data)
 
     setTimeout(
-      'location.assign("/yaMeiProject//src/pages/back/login.html")',
+      'location.assign("/yaMeiProject/back/login.html")',
       1500
     )
 
@@ -131,7 +135,7 @@ const login = async () => {
 
     if (userInfo[0].role === 'user') {
       setTimeout(() => {
-        location.assign('/yaMeiProject//src/pages/front/index.html')
+        location.assign(`${BASE_PATH}${front}index.html`)
       }, 1500)
     }
 
@@ -162,7 +166,7 @@ const logOut = () => {
   localStorage.removeItem('authToken')
   loginName.innerHTML = `
         <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
-          <a href="../../pages/back/login.html">登入/註冊</a>
+          <a href="${host}${BASE_PATH}${back}login.html">登入/註冊</a>
       `
 }
 
@@ -176,13 +180,13 @@ const toggleLoginName = () => {
     if (getUserData[0].role === 'user') {
       loginName.innerHTML = `
         <span class="block absolute w-[45px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
-          <a href="../../pages/back/login.html">登出</a>
+          <a href="${host}${BASE_PATH}${back}login.html">登出</a>
       `
       console.log('已換成登出')
     } else {
       loginName.innerHTML = `
         <span class="block absolute w-[90px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
-          <a href="../../pages/back/login.html">登入/註冊</a>
+          <a href="${host}${BASE_PATH}${back}login.html">登入/註冊</a>
       `
       console.log('已換成登入/註冊')
     }
