@@ -14,6 +14,7 @@
 
 <body>
   <%- include('public/layouts/header.ejs') %>
+
   <div class="bg-primary-100">
     <div class="w-3/4 m-auto">
       <!-- 當前看診號碼 -->
@@ -23,8 +24,11 @@
         <div class="py-12  text-center">
           <span class="text-xl  pl-3">目前看診號碼:</span>
           <span class="text-5xl font-black  pl-3 nowNum">10</span>
+
+          </div>
+
         </div>
-      </div>
+
 
       <!-- 預約查詢 -->
       <div>
@@ -41,102 +45,105 @@
               class="inquire ml-5 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">查詢</button>
             </div>
           </form>
-        </div>
-       <!-- 搜尋結果 -->
-       <div class="inquireInfo"></div>
-      </div>
 
-       <!-- 診所預約 -->
-       <div class="mt-10">
-        <h1 class="title-font mb-2">診所預約</h1>
-        <h2 class="E-font md:mb-32">Appointment</h2>
-        <div class="lg:flex justify-center py-10">
-          <div class="pb-20 lg:mr-48  ">
-            <h3 class="bg-primary-300 text-center text-white text-xl font-black px-12 lg:px-60 ">症狀</h3>
-
-            <input type="radio" name="department" value="一般牙科" class="m-1 w-1/6">一般牙科
-            <input type="radio" name="department" value="兒童牙科" class="m-1 w-1/6">兒童牙科
-            <input type="radio" name="department" value="牙齒矯正" class="m-1 w-1/6">牙齒矯正
-            <input type="radio" name="department" value="美容牙科" class="m-1 w-1/6">美容牙科
-            <input type="radio" name="department" value="人工植牙" class="m-1 w-1/6">人工植牙
-            <input type="radio" name="department" value="其他診療項目" class="m-1 w-1/6">其他診療項目
-            <br>
-            <span class="text-l pl-3">就醫原因:</span>
-            <select name="symptom" id="symptom" class="px-1 border border-black rounded-lg m-3 ml-9 px-9">
-              <option value="蛀牙">蛀牙</option>
-              <option value="牙痛">牙痛</option>
-              <option value="牙周病">牙周病</option>
-              <option value="牙齒美白">牙齒美白</option>
-              <option value="牙齒矯正">牙齒矯正</option>
-              <option value="植牙">植牙</option>
-            </select>
-
-            <!-- 診所時間 -->
-            <h3 class="bg-primary-300 text-center px-12 text-white text-xl font-black">預約日期及時間</h3>
-            <!-- 預約日期 -->
-            <input type="date" name="date" id="date" class="ml-2 pl-4">
-            <br>
-            <!-- 時間 -->
-            <input type="radio" name="time" value="09:00" class="m-2 ">09:00
-            <input type="radio" name="time" value="10:00" class="m-2">10:00
-            <input type="radio" name="time" value="11:00" class="m-2">11:00
-            <input type="radio" name="time" value="14:00" class="m-2">14:00
-            <input type="radio" name="time" value="15:00" class="m-2">15:00
-            <input type="radio" name="time" value="16:00" class="m-2">16:00
-            <input type="radio" name="time" value="18:00" class="m-2">18:00
-            <input type="radio" name="time" value="19:00" class="m-2">19:00
-            <input type="radio" name="time" value="20:00" class="m-2">20:00
-            <br>
-
-            <!-- 基本資料 -->
-            <h3 class="bg-primary-300 text-center px-12 text-white text-xl font-black">基本資料</h3>
-            <form action="http://localhost:3000/Appointment">
-              <div class="p-3">
-                <label for="name" >姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp名&nbsp&nbsp:</label>
-                <input type="text" name="name" id="" placeholder="請輸入姓名"
-                  class="name w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
-                <span class="remindNameId"></span>
-              </div>
-              <div class="p-3">
-                <label for="sex">性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp別&nbsp&nbsp:</label>
-                <input type="radio" name="sex" id="" value="男性" class="male ml-6 mr-2">男性
-                <input type="radio" name="sex" id="" value="女性" class="female m-2">女性
-              </div>
-              <div class="p-3">
-                <label for="idNum">身分證字號&nbsp&nbsp:</label>
-                <input type="text" name="idNumber" id="" placeholder="請輸入身分證字號"
-                  class="idNumber w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
-                <span class="remindIdNum"></span>
-              </div>
-              <div class="p-3">
-                <label for="birth">出&nbsp生&nbsp日&nbsp期&nbsp&nbsp:</label>
-                <input type="text" name="birth" id="" placeholder="YYYY/MM/DD"
-                  class="birth  w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
-                <span class="remindBirth"></span>
-              </div>
-              <div class="p-3">
-                <label for="mail">電&nbsp子&nbsp郵&nbsp件&nbsp&nbsp:</label>
-                <input type="text" name="mail" id="" placeholder="請輸入E-mail"
-                  class="mail  w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
-                <span class="remindMail"></span>
-              </div>
-              <div class="p-3">
-                <label for="phone">手&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp機&nbsp&nbsp:</label>
-                <input type="text" name="phone" id="" placeholder="請輸入手機號碼"
-                  class="phone w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
-                <span class="remindPhone"></span>
-              </div>
-              <h4 class="p-3">備&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp註&nbsp&nbsp:</h4>
-              <textarea name="remark" id="" cols="30" rows="10"
-                class="remark  px-1 border border-black rounded-lg ml-32 w-2/3"></textarea>
-            </form>
-            <div class="flex justify-center">
-              <input type="submit" value="送出資訊" id=""
-                class="send mt-10 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
-            </div>
           </div>
+          <!-- 搜尋結果 -->
+          <div class="inquireInfo"></div>
 
-          <span class="remindIdNum"></span>
+        </div>
+
+        <!-- 診所預約 -->
+        <div class="mt-10">
+          <h1 class="title-font mb-2">診所預約</h1>
+          <h2 class="E-font md:mb-32">Appointment</h2>
+          <div class="lg:flex justify-center py-10">
+            <div class="pb-20 lg:mr-48  ">
+              <h3 class="bg-primary-300 text-center text-white text-xl font-black px-12 lg:px-60 ">症狀</h3>
+
+              <input type="radio" name="department" value="一般牙科" class="m-1 w-1/6">一般牙科
+              <input type="radio" name="department" value="兒童牙科" class="m-1 w-1/6">兒童牙科
+              <input type="radio" name="department" value="牙齒矯正" class="m-1 w-1/6">牙齒矯正
+              <input type="radio" name="department" value="美容牙科" class="m-1 w-1/6">美容牙科
+              <input type="radio" name="department" value="人工植牙" class="m-1 w-1/6">人工植牙
+              <input type="radio" name="department" value="其他診療項目" class="m-1 w-1/6">其他診療項目
+              <br>
+              <span class="text-l pl-3">就醫原因:</span>
+              <select name="symptom" id="symptom" class="px-1 border border-black rounded-lg m-3 ml-9 px-9">
+                <option value="蛀牙">蛀牙</option>
+                <option value="牙痛">牙痛</option>
+                <option value="牙周病">牙周病</option>
+                <option value="牙齒美白">牙齒美白</option>
+                <option value="牙齒矯正">牙齒矯正</option>
+                <option value="植牙">植牙</option>
+              </select>
+
+              <!-- 診所時間 -->
+              <h3 class="bg-primary-300 text-center px-12 text-white text-xl font-black">預約日期及時間</h3>
+              <!-- 預約日期 -->
+              <input type="date" name="date" id="date" class="ml-2 pl-4">
+              <br>
+              <!-- 時間 -->
+              <input type="radio" name="time" value="09:00" class="m-2 ">09:00
+              <input type="radio" name="time" value="10:00" class="m-2">10:00
+              <input type="radio" name="time" value="11:00" class="m-2">11:00
+              <input type="radio" name="time" value="14:00" class="m-2">14:00
+              <input type="radio" name="time" value="15:00" class="m-2">15:00
+              <input type="radio" name="time" value="16:00" class="m-2">16:00
+              <input type="radio" name="time" value="18:00" class="m-2">18:00
+              <input type="radio" name="time" value="19:00" class="m-2">19:00
+              <input type="radio" name="time" value="20:00" class="m-2">20:00
+              <br>
+
+              <!-- 基本資料 -->
+              <h3 class="bg-primary-300 text-center px-12 text-white text-xl font-black">基本資料</h3>
+              <form action="http://localhost:3000/Appointment">
+                <div class="p-3">
+                  <label for="name">姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp名&nbsp&nbsp:</label>
+                  <input type="text" name="name" id="" placeholder="請輸入姓名"
+                    class="name w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+                  <span class="remindNameId"></span>
+                </div>
+                <div class="p-3">
+                  <label for="sex">性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp別&nbsp&nbsp:</label>
+                  <input type="radio" name="sex" id="" value="男性" class="male ml-6 mr-2">男性
+                  <input type="radio" name="sex" id="" value="女性" class="female m-2">女性
+                </div>
+                <div class="p-3">
+                  <label for="idNum">身分證字號&nbsp&nbsp:</label>
+                  <input type="text" name="idNumber" id="" placeholder="請輸入身分證字號"
+                    class="idNumber w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+                  <span class="remindIdNum"></span>
+                </div>
+                <div class="p-3">
+                  <label for="birth">出&nbsp生&nbsp日&nbsp期&nbsp&nbsp:</label>
+                  <input type="text" name="birth" id="" placeholder="YYYY/MM/DD"
+                    class="birth  w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+                  <span class="remindBirth"></span>
+                </div>
+                <div class="p-3">
+                  <label for="mail">電&nbsp子&nbsp郵&nbsp件&nbsp&nbsp:</label>
+                  <input type="text" name="mail" id="" placeholder="請輸入E-mail"
+                    class="mail  w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+                  <span class="remindMail"></span>
+                </div>
+                <div class="p-3">
+                  <label for="phone">手&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp機&nbsp&nbsp:</label>
+                  <input type="text" name="phone" id="" placeholder="請輸入手機號碼"
+                    class="phone w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+                  <span class="remindPhone"></span>
+                </div>
+                <h4 class="p-3">備&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp註&nbsp&nbsp:</h4>
+                <textarea name="remark" id="" cols="30" rows="10"
+                  class="remark  px-1 border border-black rounded-lg ml-32 w-2/3"></textarea>
+              </form>
+              <div class="flex justify-center">
+                <input type="submit" value="送出資訊" id=""
+                  class="send mt-10 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+              </div>
+            </div>
+
+            <span class="remindIdNum"></span>
+
 
           <!-- 檢查輸入訊息 -->
           <div class="checkInfo bg-white">
@@ -160,14 +167,16 @@
               <div class="flex justify-center">
                 <input type="submit" value="確認預約" id=""
                   class="save mt-10 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+
+                </div>
+
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </div>
-   </div>
 
       <%- include('public/layouts/footer.ejs') %>
 

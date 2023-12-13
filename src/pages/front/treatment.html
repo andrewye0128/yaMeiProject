@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芽渼牙醫診所-診療項目</title>
+    <link rel="stylesheet" href="/src/css/tailwind.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="/src/css/treatment.css">
+    <!-- 使用FontAwesome的CDN引入CSS文件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" />
+</head>
+
+<body>
+    <%- include('public/layouts/header.ejs') %>
+    <%- include('public/layouts/treatment-box.ejs') %>
+        <div class="news-box box-border inline-flex flex-col items-center  md:justify-around">
+            <div class="news-title text-center mb-10 md:flex flex-col items-center md:items-baseline">
+                <h2 class="title-font mb-2">診療項目</h2>
+                <span class="E-font md:mb-32">treatment</span>
+            </div>
+            <div class="dental-items sm:w-[375px] lg:w-[1000px]">
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4
+                xl:flex" id="one">
+                    <div class="treat-pic mb-4 xl:mr-5 flex items-center">
+                        <img src="https://www.fed.com.tw/data/service/cover/1672025877838374920.jpg">
+                    </div>
+                    <div class="dental-info ml-5 xl:mt-10 xl:ml-5">
+                        <h2 class="treat-font mb-4">一般牙科</h2>
+                        <p class="item-font mb-4 w-[350px] text-black text-justify">
+                            對初診及複診的患者全面口腔檢查及初步的治療
+                            ，針對每位患者的病癥部位來醫治，依據病例的複雜程度，會與其他次專科醫師會照，完成完整的治療計劃，依計劃分工合作進行療程。</p>
+                        <div class="font-black mb-2">家庭牙科診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 全口牙齒健康檢查及初步治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 擬定完整口腔治療計畫 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 全口齒垢刮除術(洗牙) </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 轉介專科會診及介入治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 簡易及緊急處理</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 口腔衛教</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4 xl:flex flex-row-reverse" id="two">
+                    <div class="mb-4 xl:mr-5 flex items-center">
+                        <img src="https://www.fed.com.tw/data/service/cover/1621408856440480696.jpg">
+                    </div>
+                    <div class="dental-info mt-10 ml-5 xl:mr-10">
+                        <h2 class="treat-font mb-4">兒童牙科</h2>
+                        <p class="item-font mb-4 w-[350px] text-black text-justify">
+                            針對成長發育中的兒童及青少年進行牙齒健康護理，全面維護兒童口腔的健康，依照永久齒的發育曲線適當處理，並注重孩童在醫療過程中的心理狀況，讓孩子們的牙齒、顏面都能健全發育。</p>
+                            <div class="font-black mb-2">兒童牙科診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 定期口腔健檢及塗氟</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 齲齒預防與治療 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 乳牙/恆牙外傷治療 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 教育機關牙齒宣導及訓練</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 針對過度恐懼孩童提供舒眠治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> MRC兒童肌咬合訓練</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4 xl:flex" id="three">
+                    <div class="pic mb-4 xl:mr-5 flex items-center">
+                        <img src="https://www.fed.com.tw/data/service/cover/1621410108433363101.jpg">
+                    </div>
+                    <div class="dental-info mt-10 ml-5">
+                        <h2 class="treat-font mb-4">牙齒矯正</h2>
+                        <p class="item-font mb-4 w-[350px] text-black text-justify">
+                            對牙齒或齒列的異常咬合的患者，依照不同程度的齒顎不整，量身打造最適切的療程內容，將牙齒調整至適當的狀況，獲得口腔健康、功能與美觀上的改善，會提供後續注意事項以及保健資訊。</p>
+                            <div class="font-black mb-2">牙齒矯正診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 隱適美隱形矯正</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 兒童隱適美矯正 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 數位隱形牙套，兒童隱適美(Invisalign) </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 口腔肌肉功能訓練</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> MRC肌咬合訓練 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 一般矯正器 </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4 xl:flex flex-row-reverse" id="four">
+                    <div class="pic mb-4 xl:mr-5 flex items-center">
+                        <img src="https://www.fed.com.tw/data/service/cover/1672025877838374920.jpg">
+                    </div>
+                    <div class="dental-info ml-5 mt-10 xl:mr-10">
+                        <h2 class="treat-font mb-4">美容牙科</h2>
+                        <p class="item-font mb-4 w-[350px]  text-black text-justify">
+                            專注於改善患者的口腔外觀和美觀度，由專科醫生依據病人的外貌特徵，結合醫學與美學，通過各種牙齒修復和美容程序，提供患者更自信的笑容和更健康的口腔。</p>
+                            <div class="font-black mb-2">牙醫提供全瓷診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 美容貼片</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 蛀牙補綴 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 缺損修復 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 齒雕覆蓋修復</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 植牙、全瓷假牙冠</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 德國數位3D晶雕 </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4 xl:flex" id="five">
+                    <div class="pic mb-4 xl:mr-5 flex items-center">
+                        <img src="https://www.fed.com.tw/data/service/cover/1673504814495045186.jpg">
+                    </div>
+                    <div class="dental-info mt-10 ml-5">
+                        <h2 class="treat-font mb-4">人工植牙</h2>
+                        <p class="item-font mb-4 w-[350px] text-black text-justify">
+                            是一種修復口腔的牙科手術，將無菌處理過、與人體組織能結合良好的鈦金屬牙根，植入齒槽骨中，以支撐其上各種假牙的咬合力、取代喪失的牙齒，恢復美觀、改善咀嚼功能。</p>
+                            <div class="font-black mb-2">人工植牙診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 定期口腔健檢及塗氟</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 齲齒預防與治療 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 乳牙/恆牙外傷治療 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 教育機關牙齒宣導及訓練</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 針對過度恐懼孩童提供舒眠治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> MRC兒童肌咬合訓練</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4 xl:flex flex-row-reverse" id="six">
+                    <div class="pic mb-4 xl:mr-5 flex items-center">
+                        <img class="xl:max-w-[100%] " src="https://www.fed.com.tw/data/service/cover/1669874511251591097.jpg">
+                    </div>
+                    <div class="dental-info ml-5 mt-10 xl:mr-10">
+                        <h2 class="treat-font mb-4">其他項目</h2>
+                        <p class="item-font mb-4 w-[350px] text-black text-justify">
+                            牙齒是我們整體健康的關鍵，我們的專業牙科團隊包括經驗豐富的牙醫、口腔衛生師和護理師，無論需要牙齒檢查、治療牙齒問題還是改善笑容，芽渼會提供個性化的解決方案，歡迎您隨時預約診療。</p>
+                            <div class="font-black mb-2">其他診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 根管治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 牙齦下刮除術 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 美容牙科/牙齦美白微整術 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 微創牙周治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 牙體修復</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> MRC功能性齒顎矯正</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <%- include('public/layouts/footer.ejs') %>
+            <!-- 載入header.js -->
+            <script type="module" src="../../../main.js"></script>
+            <script src="../../js/header.js"></script>
+            <script src="../../js/treatment.js"></script>
+            <!-- 載入footer.js -->
+            <!-- <script src="../../js/footer.js"></script> -->
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+                integrity="sha512-..." crossorigin="anonymous"></script>
+</body>
+
+</html>

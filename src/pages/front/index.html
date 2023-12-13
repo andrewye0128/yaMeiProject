@@ -36,16 +36,18 @@
             </span>
             <h2>讓人難以自拔的除了愛情</h2>
             <h1>還有牙齒</h1>
-            <button class="bookingBtn rounded-lg text-white hover:bg-primary-400">線上預約</button>
+            <a href="https://alannayl.github.io/yaMeiProject/front/appointment.html"
+              class="bookingBtn rounded-lg text-white hover:bg-primary-400 flex items-center justify-center">線上預約</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="news-box box-border inline-flex flex-col items-center lg:flex-row lg:justify-around">
-      <div class="news-title text-center md:flex flex-col items-center lg:items-baseline lg:mb-4">
+    <div
+      class="news-box box-border inline-flex flex-col px-3 py-16 items-center xl:flex-row xl:justify-around lg:px-224">
+      <div class="news-title text-center mb-10 md:flex flex-col items-center lg:items-baseline lg:mb-4">
         <h2 class="title-font mb-2">最新消息</h2>
-        <span class="E-font md:mb-32">News</span>
-        <div class="doc hidden lg:block"><img src="/public/images/Doctors 1.png"></div>
+        <span class="E-font lg:mb-32">News</span>
+        <div class="doc hidden xl:block"><img src="/public/images/Doctors 1.png"></div>
       </div>
       <div class="news-items">
         <div class="content w-96 border-t-16 border-t-primary-300 rounded-tr-lg rounded-tl-lg">
@@ -107,14 +109,219 @@
       </div>
     </div>
     <%- include('public/layouts/treatment-box.ejs') %>
+      <div class="swiper-box w-full overflow-hidden border-box px-3 py-16 md:px-40 md:py-16 lg:px-56">
+        <div class="swiper-title text-center mb-8 md:flex flex-col items-center md:items-baseline">
+          <h2 class="title-font mb-2">診所評價</h2>
+          <span class="E-font ">Reviews</span>
+        </div>
+        <div class="carousel">
+          <div class="swiper-content flex">
+            <div class="swiper-card">
+              <div class="avatar">
+                <img src="https://picsum.photos/300/200/?random=11">
+                <div class="name">Alanna
+                  <span class="star-rating flex text-primary-200">
+                    <label for="rate-1" style="--i: 1"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="1">
+                    <label for="rate-2" style="--i: 2"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="2" checked>
+                    <label for="rate-3" style="--i: 3"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="3">
+                    <label for="rate-4" style="--i: 4"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="4">
+                    <label for="rate-5" style="--i: 5"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="5">
+                  </span>
+                </div>
+              </div>
+              <div class="card-content">醫生細心、護士體貼，雖然不是從小看到大，但也看診了快8年，另人依賴又放心。
+              </div>
+              <a class="more text-primary-400">閱讀更多</a>
+            </div>
+            <div class="swiper-card">
+              <div class="avatar">
+                <img src="https://picsum.photos/300/200/?random=12">
+                <div class="name">江筱璐
+                  <span class="star-rating flex text-primary-200">
+                    <label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="1">
+                    <label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="2">
+                    <label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="3">
+                    <label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="4">
+                    <label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="5">
+                  </span>
+                </div>
+              </div>
+              <div class="card-content">吳醫師真的好帥~~~~
+              </div>
+              <a class="more text-primary-400">閱讀更多</a>
+            </div>
+            <div class="swiper-card">
+              <div class="avatar">
+                <img src="https://picsum.photos/300/200/?random=50">
+                <div class="name">吳花狗
+                  <span class="star-rating flex text-primary-200">
+                    <label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="1">
+                    <label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="2">
+                    <label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="3">
+                    <label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="4">
+                    <label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+                    <input type="radio" value="5">
+                  </span>
+                </div>
+              </div>
+              <div class="card-content">芽渼牙醫難波萬啦~~~~~
+              </div>
+              <a class="more text-primary-400">閱讀更多</a>
+            </div>
+          </div>
+          <button
+            class="recieve bg-primary-300 text-white active:bg-primary-400 mt-5 mx-auto w-[124px] h-[44px] md:w-[166px] md:mt-4 md:h-[61px]">我要評論</button>
+          <form id="dialog" class="dialog-container bg-white rounded">
+            <div class="dialog-header bg-primary-300 text-white h-[56px] w-full py-[16px] px-1 rounded-t">
+              <span>我要評論</span>
+              <button id="closeBtn" class="close-btn text-xl">×</button>
+            </div>
+            <div class="dialog-name flex flex-col justify-center items-center my-[1rem]">
+              <p>暱稱：<span>江江月</span></p>
+              <span class="input-rating flex text-primary-200">
+                <label for="star-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" value="1" id="star-1">
+                <label for="star-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" value="2" id="star-2">
+                <label for="star-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" value="3" id="star-3">
+                <label for="star-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" value="4" id="star-4">
+                <label for="star-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+                <input type="radio" value="5" id="star-5">
+              </span>
+            </div>
+            <div class="dialog-content">
+              <textarea class="bg-gray-200 rounded px-2 py-4" placeholder="留下評論..." cols="30" rows="10"></textarea>
+            </div>
+            <button
+              class="submit bg-primary-300 text-white active:bg-primary-400 mt-5 mx-auto w-[124px] h-[44px] md:w-[166px] md:mt-4 md:h-[61px] rounded">送出評論</button>
+          </form>
+        </div>
+      </div>
 
+      <div class="clinc w-full overflow-hidden border-box px-3 py-16 md:px-40 md:py-16 lg:px-56">
+        <div class="swiper-title text-center mb-8 md:flex flex-col items-center md:items-baseline">
+          <h2 class="title-font mb-2">門診時間</h2>
+          <span class="E-font ">Reviews</span>
+        </div>
+        <div class="clinc-img text-center">
+          <iframe width="351" height="318" style="border-radius: 8px;"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8286112998835!2d121.57546987537665!3d25.039889777812633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aba143ffde79%3A0x4682ab2e8b1b350e!2z576O6bqX5rC45pil54mZ6Yar6Ki65omA!5e0!3m2!1szh-TW!2stw!4v1702215211846!5m2!1szh-TW!2stw"
+            frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          <div>
+            <p class="clinic-title">芽渼牙醫診所 DENTAL CLINIC.</p>
+            <div class="local flex  mt-4">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_185_2857)">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"
+                    fill="#363636" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_185_2857">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="ml-2">台北市中山區美麗路123號</p>
+
+            </div>
+            <div class="phone flex  mt-4 justify-center lg:justify-start">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_185_2868)">
+                  <path
+                    d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.45 8.19 3 7.65 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z"
+                    fill="#363636" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_185_2868">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="ml-2">02-26941234</p>
+            </div>
+          </div>
+        </div>
+        <div class="clinic-schedule">
+          <div class="schedule">
+            <div class="time-label">
+              <p>09:00-12:00</p>
+              <p>14:00-17:00</p>
+              <p>18:00-21:00</p>
+            </div>
+            <div class="mo">
+              <div class="week">
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+                <div class="day">Sun</div>
+              </div>
+              <div class="time">
+                <div class="flex">
+                  <div class="time-slot">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="time-slot">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="time-slot">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
       <%- include('public/layouts/footer.ejs') %>
 
         <!-- 載入main.js -->
         <script type="module" src="../../../main.js"></script>
 
         <!-- 載入font awesome cdn -->
-      <script src="https://kit.fontawesome.com/25467b0b27.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/25467b0b27.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

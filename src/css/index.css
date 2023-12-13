@@ -117,7 +117,6 @@ header {
   width: 100%;
   /* width: 375px; */
   height: 745px;
-  padding: 64px 12px;
   background-color: #ffffff;
   opacity: 1;
   background-image: linear-gradient(#edf6f6 0.8px, transparent 0.8px), linear-gradient(to right, #edf6f6 0.8px, #ffffff 0.8px);
@@ -164,39 +163,290 @@ header {
   color: #198783;
 }
 
-/* 
-.treatment-box .content {
+.pagination {
+  /* position: relative; */
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.carousel {
+  cursor: grab;
+  width: 95%;
+  margin: auto;
+  text-align: center;
+}
+
+
+.swiper-content {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.swiper-content::-webkit-scrollbar {
+  display: none;
+}
+
+.swiper-card {
+  width: 324px;
+  height: 248px;
+  margin-right: 26px;
+  background: linear-gradient(to right, #FFFFFF, #FFFFFF), linear-gradient(to right, #F0F0F0, #F0F0F0);
+  border: 2px solid #F0F0F0;
+  box-shadow: 4px 4px 0px 0px #F0F0F0;
+  border-radius: 20px;
+  flex: 0 0 324px;
+  text-align: left;
+  padding: 20px 10px;
+  position: relative;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.swiper-card:hover {
+  background: linear-gradient(to right, #FFFFFF, #FFFFFF), linear-gradient(to right, #C0E0DF, #C0E0DF);
+  border: 2px solid #C0E0DF;
+  box-shadow: 4px 4px 0px 0px #C0E0DF;
+}
+
+.avatar {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.star-rating {
+  white-space: nowrap;
+}
+
+.star-rating [type="radio"] {
+  appearance: none;
+}
+
+.star-rating i {
+  font-size: 1.2em;
+  padding-right: 5px;
+  transition: 0.3s;
+}
+
+.star-rating label:is(:hover, :has(~ :hover)) i {
+  transform: scale(1.35);
+  color: #fffdba;
+  animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
+}
+
+
+.star-rating label:has(~ :checked) i {
+  color: #faec1b;
+  text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
+}
+
+.card-content {
+  white-space: pre-line;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* 設定顯示 3 行 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.swiper-card.expanded {
+  border: 2px solid #C0E0DF;
+  box-shadow: 4px 4px 0px 0px #C0E0DF;
+  z-index: 1;
+}
+
+.card-content.expanded {
+  white-space: normal;
+  display: block;
+  height: auto;
+}
+
+.more {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  text-decoration: none;
+}
+
+.recieve {
+  position: relative;
+  top: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.input-rating {
+  white-space: nowrap;
+}
+
+.input-rating [type="radio"] {
+  appearance: none;
+}
+
+.input-rating i {
+  font-size: 1.2em;
+  padding-right: 5px;
+  transition: 0.3s;
+}
+
+.input-rating label:is(:hover, :has(~ :hover)) i {
+  transform: scale(1.35);
+  color: #fffdba;
+  animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
+}
+
+
+/* .input-rating label:has(~ :checked) i {
+  color: #faec1b;
+  text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
+} */
+
+@keyframes jump {
+
+  0%,
+  50% {
+    transform: translatey(0) scale(1.35);
+  }
+
+  100% {
+    transform: translatey(-15%) scale(1.35);
+  }
+}
+
+#dialog {
+  display: none;
+}
+
+.dialog-container {
+  width: 375px;
+  height: 655px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.dialog-header {
+  text-align: center;
+}
+
+.dialog-header button {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.clinc-img {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.treatment-box .review-card {
-  width: 100%;
-  max-width: 351px;
-  height: 242px;
-  margin-bottom: 24px;
+.clinic-title {
+
+  height: 30px;
+  margin-top: 1rem;
+  /* Body/fs-6 */
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  /* identical to box height, or 188% */
+  letter-spacing: 0.03em;
+
+  /* Primary/400 */
+  color: #198783;
 }
 
-.treatment-name {
-  color: #363636;
-  font-size: 20px;
+.clinic-schedule {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.schedule {
+  display: flex;
+  width: 351px;
+  height: auto;
+  background: #FFFFFF;
+  border: 1px solid #F0F0F0;
+  border-radius: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.week {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #F0F0F0;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.time-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-family: 'Noto Sans TC';
+}
+
+.time-label p {
+  width: 61px;
+  height: 60px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #F0F0F0;
+}
+
+.day {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Noto Sans TC';
   font-weight: 700;
-  line-height: 24px;
-  letter-spacing: 1.6px;
-  margin-top: 20px;
-  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #363636;
+  border-top: 1px solid #F0F0F0;
+  position: relative;
 }
 
-.treatment-box .review-card .btn {
-  color: #666666;
-  background: #f0f0f0;
-  width: 108px;
-  height: 36px;
-  padding: 6px 20px;
-  border-radius: 25px;
+.time-slot {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  color: #363636;
+  border-top: 1px solid #F0F0F0;
+  position: relative;
+  height: 60px;
 }
- */
+
+
+.dot {
+  width: 8px;
+  height: 8px;
+
+  background: #66BAB7;
+  border-radius: 50%;
+}
 
 @media (min-width:451px) {
 
@@ -285,12 +535,21 @@ header {
   }
 
   .news-items .content {
-    max-width: 100%;
+    max-width: 500px;
     width: calc(856px * .75);
   }
 
   .time-font {
     width: 30%;
+  }
+
+  .swiper-card {
+    width: 416px;
+
+  }
+
+  .recieve {
+    top: 60px
   }
 
   /* .treatment-box .content {
@@ -324,6 +583,40 @@ header {
   .sologan-content {
     width: calc(520px * 0.75);
   }
+
+  .clinc-img {
+    flex-direction: row;
+    align-items: flex-start
+  }
+
+  iframe {
+    width: 60%;
+  }
+
+  .phone {
+    justify-content: flex-start;
+  }
+
+  .schedule {
+    width: 100%;
+  }
+
+  .mo {
+    width: 100%;
+  }
+
+  .time-label p {
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .clinc-img {
+    justify-content: space-around;
+  }
+
+  /* .news-box {
+    flex-direction: column;
+  } */
 
   /* .treatment-box .content {
     flex-direction: row;
