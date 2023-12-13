@@ -8,7 +8,7 @@ const cause = document.querySelector('.cause');
 const appointmentTable = document.querySelector('#appointmentTable');
 let rowCount = 1; // 用於計算表格行數
 
-axios.get("http://localhost:4000/Appointment")
+axios.get("https://yameiproject.onrender.com/Appointment")
 .then(function(response){
 let data = response.data ;
 function init(){
@@ -24,26 +24,26 @@ function init(){
   const cell6 = newRow.insertCell(5);
   const cell7 = newRow.insertCell(6);
 
-  cell1.classList.add("border", "border-slate-300", "px-3");
+  cell1.classList.add("border", "border-slate-300", "px-3", 'text-center');
     cell1.textContent = rowCount;
     rowCount++;
 
-  cell2.classList.add("border", "border-slate-300", "px-3");
+  cell2.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell2.textContent = item.name;
 
-  cell3.classList.add("border", "border-slate-300", "px-3");
+  cell3.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell3.textContent = item.sex;
 
-  cell4.classList.add("border", "border-slate-300", "px-3");
+  cell4.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell4.textContent = item.birth;
 
-  cell5.classList.add("border", "border-slate-300", "px-3");
+  cell5.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell5.textContent = item.time;
 
-  cell6.classList.add("border", "border-slate-300", "px-3");
+  cell6.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell6.textContent = item.symptom;
 
-  cell7.classList.add("border", "border-slate-300", "px-3");
+  cell7.classList.add("border", "border-slate-300", "px-3", 'text-center');
   const modifyBtn = document.createElement("input");
   modifyBtn.type = "button";
   modifyBtn.value = "修改";
@@ -62,9 +62,9 @@ function init(){
 //篩選器
 const searchDate = document.querySelector("#searchDate");
 
-searchDate.addEventListener("mouseup",function(e){
+searchDate.addEventListener("change",function(e){
   
-  appointmentTable.innerHTML = '';
+  appointmentTable.innerHTML = "";
   rowCount = 1;
   data.forEach(function(item,index){ 
     //全部顯示
@@ -79,26 +79,26 @@ searchDate.addEventListener("mouseup",function(e){
   const cell6 = newRow.insertCell(5);
   const cell7 = newRow.insertCell(6);
 
-  cell1.classList.add("border", "border-slate-300", "px-3");
+  cell1.classList.add("border", "border-slate-300", "px-3", 'text-center');
     cell1.textContent = rowCount;
     rowCount++;
 
-  cell2.classList.add("border", "border-slate-300", "px-3");
+  cell2.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell2.textContent = item.name;
 
-  cell3.classList.add("border", "border-slate-300", "px-3");
+  cell3.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell3.textContent = item.sex;
 
-  cell4.classList.add("border", "border-slate-300", "px-3");
+  cell4.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell4.textContent = item.birth;
 
-  cell5.classList.add("border", "border-slate-300", "px-3");
+  cell5.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell5.textContent = item.time;
 
-  cell6.classList.add("border", "border-slate-300", "px-3");
+  cell6.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell6.textContent = item.symptom;
 
-  cell7.classList.add("border", "border-slate-300", "px-3");
+  cell7.classList.add("border", "border-slate-300", "px-3", 'text-center');
   const modifyBtn = document.createElement("input");
   modifyBtn.type = "button";
   modifyBtn.value = "修改";
@@ -123,26 +123,26 @@ searchDate.addEventListener("mouseup",function(e){
       const cell6 = newRow.insertCell(5);
       const cell7 = newRow.insertCell(6);
     
-      cell1.classList.add("border", "border-slate-300", "px-3");
+      cell1.classList.add("border", "border-slate-300", "px-3", 'text-center');
         cell1.textContent = rowCount;
         rowCount++;
     
-      cell2.classList.add("border", "border-slate-300", "px-3");
+      cell2.classList.add("border", "border-slate-300", "px-3", 'text-center');
       cell2.textContent = item.name;
     
-      cell3.classList.add("border", "border-slate-300", "px-3");
+      cell3.classList.add("border", "border-slate-300", "px-3", 'text-center');
       cell3.textContent = item.sex;
     
-      cell4.classList.add("border", "border-slate-300", "px-3");
+      cell4.classList.add("border", "border-slate-300", "px-3", 'text-center');
       cell4.textContent = item.birth;
     
-      cell5.classList.add("border", "border-slate-300", "px-3");
+      cell5.classList.add("border", "border-slate-300", "px-3", 'text-center');
       cell5.textContent = item.time;
     
-      cell6.classList.add("border", "border-slate-300", "px-3");
+      cell6.classList.add("border", "border-slate-300", "px-3", 'text-center');
       cell6.textContent = item.symptom;
     
-      cell7.classList.add("border", "border-slate-300", "px-3");
+      cell7.classList.add("border", "border-slate-300", "px-3", 'text-center');
       const modifyBtn = document.createElement("input");
       modifyBtn.type = "button";
       modifyBtn.value = "修改";
@@ -177,26 +177,26 @@ newBtn.addEventListener('click',function(e){
   const cell6 = newRow.insertCell(5);
   const cell7 = newRow.insertCell(6);
 
-  cell1.classList.add("border", "border-slate-300", "px-3");
+  cell1.classList.add("border", "border-slate-300", "px-3" , 'text-center');
     cell1.textContent = rowCount;
     rowCount++;
 
-  cell2.classList.add("border", "border-slate-300", "px-3");
+  cell2.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell2.textContent = nameId.value;
 
-  cell3.classList.add("border", "border-slate-300", "px-3");
+  cell3.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell3.textContent = sex.value;
 
-  cell4.classList.add("border", "border-slate-300", "px-3");
+  cell4.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell4.textContent = birth.value;
 
-  cell5.classList.add("border", "border-slate-300", "px-3");
+  cell5.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell5.textContent = time.value;
 
-  cell6.classList.add("border", "border-slate-300", "px-3");
+  cell6.classList.add("border", "border-slate-300", "px-3", 'text-center');
   cell6.textContent = cause.value;
 
-  cell7.classList.add("border", "border-slate-300", "px-3");
+  cell7.classList.add("border", "border-slate-300", "px-3", 'text-center');
   const modifyBtn = document.createElement("input");
   modifyBtn.type = "button";
   modifyBtn.value = "修改";
@@ -212,7 +212,7 @@ newBtn.addEventListener('click',function(e){
   //存入資料庫
   const date = document.querySelector('#date');
   const selected = document.querySelector('input[type=radio][name=sex]:checked');
-  axios.post("http://localhost:4000/Appointment",{
+  axios.post("https://yameiproject.onrender.com/Appointment",{
     
   depart:"",
   date:date.value,
@@ -224,7 +224,7 @@ newBtn.addEventListener('click',function(e){
   birth:birth.value,
   mail: "",
   phone: "",
-  remark:""
+  remark:"",
+  attendStatus: false
 } )
 })
-
