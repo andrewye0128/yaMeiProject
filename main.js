@@ -1,5 +1,6 @@
 import 'tailwindcss/tailwind.css'
 import headers from './src/js/header.js'
+import appointmentModule from './src/js/appointment.js'
 // import '@fortawesome/fontawesome-free/css/all.css'
 
 import { swiper, dialog, news } from './src/js/index.js'
@@ -16,6 +17,10 @@ headers.close.addEventListener('click', headers.closeDisplayToggle)
 
 // 導覽列滑動改變
 headers.scrollChange()
+
+appointmentModule.getNum()
+appointmentModule.sendForm()
+appointmentModule.saveForm()
 
 // index 評價
 document.addEventListener('DOMContentLoaded', async function () {
