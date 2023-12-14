@@ -24,12 +24,10 @@ const news = {
           content: '...',
           date: '2023-11-10'
         }
-        // Add more static data if needed
       ]
 
       // Combine static data with server data
       const combinedData = [...staticData, ...serverData]
-
       // Map and format the combined data
       this.formattedNews = combinedData.map((newsItem) => {
         return {
@@ -39,7 +37,6 @@ const news = {
           date: newsItem.date ? new Date(newsItem.date).toISOString().split('T')[0] : 'N/A'
         }
       })
-
       const newsList = document.querySelector('.content ul')
       const startIndex = (this.currentPage - 1) * this.itemsPerPage
       const endIndex = startIndex + this.itemsPerPage
@@ -64,11 +61,9 @@ const news = {
   updatePaginationButtons: function () {
     const totalPages = Math.ceil(this.formattedNews.length / this.itemsPerPage)
 
-    // Clear existing pagination buttons
     const paginationContainer = document.querySelector('.pagination')
     paginationContainer.innerHTML = ''
 
-    // Create and append pagination buttons for the current visible range
     const startPage = Math.max(1, this.currentPage - 2)
     const endPage = Math.min(totalPages, this.currentPage + 2)
 
