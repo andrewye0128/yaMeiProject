@@ -1,18 +1,22 @@
-// 將資料庫內容顯示於HTML
-const nameId = document.querySelector('.name')
-const idNum = document.querySelector('.idNum')
-const birth = document.querySelector('.birth')
-const time = document.querySelector('.time')
-const cause = document.querySelector('.cause')
-
 const appointmentTable = document.querySelector('#appointmentTable')
 let rowCount = 1 // 用於計算表格行數
 
-axios.get('http://localhost:4000/Appointment')
+function getAppointmentList(){
+axios.get('https://yameiproject.onrender.com/Appointment')
   .then(function (response) {
     const data = response.data
+   
     function init() {
       data.forEach(function (item) {
+      
+         //判斷看診狀態
+         let status ="";
+        if(item.attendStatus==true){
+          status = "已看診"
+        }else{
+          status = "未看診"
+        }
+
         const newRow = appointmentTable.insertRow() // 創建新行
         // 創建表格資料
         const cell1 = newRow.insertCell(0)
@@ -21,49 +25,57 @@ axios.get('http://localhost:4000/Appointment')
         const cell4 = newRow.insertCell(3)
         const cell5 = newRow.insertCell(4)
         const cell6 = newRow.insertCell(5)
-        const cell7 = newRow.insertCell(6)
 
-        cell1.classList.add('border', 'border-slate-300', 'px-3')
+        cell1.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
         cell1.textContent = rowCount
         rowCount++
 
-        cell2.classList.add('border', 'border-slate-300', 'px-3')
+        cell2.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
         cell2.textContent = item.name
 
-        cell3.classList.add('border', 'border-slate-300', 'px-3')
+        cell3.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
         cell3.textContent = item.sex
 
-        cell4.classList.add('border', 'border-slate-300', 'px-3')
+        cell4.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
         cell4.textContent = item.birth
 
-        cell5.classList.add('border', 'border-slate-300', 'px-3')
-        cell5.innerHTML = '<a href="">病歷</a>'
+        cell5.classList.add('border', 'border-slate-300', 'px-3', 'text-center', 'underline', 'text-primary-300' )
+        const link = document.createElement('a')
+        link.href ="#";
+        link.setAttribute('data-href', item.id);
+        link.textContent = '病歷';
+        cell5.appendChild(link)
 
-        cell6.classList.add('border', 'border-slate-300', 'px-3')
-        const modifyBtn = document.createElement('input')
-        modifyBtn.type = 'button'
-        modifyBtn.value = '已看診'
-        modifyBtn.classList.add('px-3', 'rounded-lg', 'text-white', 'bg-primary-300', 'hover:bg-primary-400', 'cursor-pointer')
-        cell6.appendChild(modifyBtn)
-
-        const deleteBtn = document.createElement('input')
-        deleteBtn.type = 'button'
-        deleteBtn.value = '未看診'
-        deleteBtn.classList.add('px-3', 'ml-1', 'rounded-lg', 'text-white', 'bg-primary-300', 'hover:bg-primary-400', 'cursor-pointer')
-        cell6.appendChild(deleteBtn)
-      })
-    }
-    init()
+        cell6.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
+        const attendBtn = document.createElement('input')
+        attendBtn.type = 'button'
+        attendBtn.value = status
+        attendBtn.setAttribute('data-id', item.id);
+        attendBtn.setAttribute('data-status', item.attendStatus);
+        attendBtn.classList.add('px-3', 'ml-1', 'rounded-lg', 'text-white', 'bg-primary-300', 'hover:bg-primary-400', 'cursor-pointer', 'attendStatus')
+        cell6.appendChild(attendBtn)
+    })
+  }
+    init();
 
     // 篩選器
     const searchDate = document.querySelector('#searchDate')
-
-    searchDate.addEventListener('mouseup', function (e) {
-      appointmentTable.innerHTML = ''
+    
+    searchDate.addEventListener('change', function (e) {
+      e.preventDefault();
+      let nowDate = e.target.value
+      appointmentTable.innerHTML = ""
       rowCount = 1
       data.forEach(function (item, index) {
         // 全部顯示
-        if (e.target.value == '') {
+        if (nowDate == '') {
+                   //判斷看診狀態
+         let status ="";
+         if(item.attendStatus==true){
+           status = "已看診"
+         }else{
+           status = "未看診"
+         }
           const newRow = appointmentTable.insertRow() // 創建新行
           // 創建表格資料
           const cell1 = newRow.insertCell(0)
@@ -72,89 +84,127 @@ axios.get('http://localhost:4000/Appointment')
           const cell4 = newRow.insertCell(3)
           const cell5 = newRow.insertCell(4)
           const cell6 = newRow.insertCell(5)
-          const cell7 = newRow.insertCell(6)
-
-          cell1.classList.add('border', 'border-slate-300', 'px-3')
+  
+          cell1.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
           cell1.textContent = rowCount
           rowCount++
-
-          cell2.classList.add('border', 'border-slate-300', 'px-3')
+  
+          cell2.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
           cell2.textContent = item.name
-
-          cell3.classList.add('border', 'border-slate-300', 'px-3')
+  
+          cell3.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
           cell3.textContent = item.sex
-
-          cell4.classList.add('border', 'border-slate-300', 'px-3')
+  
+          cell4.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
           cell4.textContent = item.birth
-
-          cell5.classList.add('border', 'border-slate-300', 'px-3')
-          cell5.textContent = item.time
-
-          cell6.classList.add('border', 'border-slate-300', 'px-3')
-          cell6.textContent = item.symptom
-
-          cell7.classList.add('border', 'border-slate-300', 'px-3')
-          const modifyBtn = document.createElement('input')
-          modifyBtn.type = 'button'
-          modifyBtn.value = '修改'
-          modifyBtn.classList.add('px-3', 'rounded-lg', 'text-white', 'bg-primary-300', 'hover:bg-primary-400', 'cursor-pointer')
-          cell7.appendChild(modifyBtn)
-
-          const deleteBtn = document.createElement('input')
-          deleteBtn.type = 'button'
-          deleteBtn.value = '刪除'
-          deleteBtn.classList.add('px-3', 'ml-1', 'rounded-lg', 'text-white', 'bg-primary-300', 'hover:bg-primary-400', 'cursor-pointer')
-          cell7.appendChild(deleteBtn)
+  
+          cell5.classList.add('border', 'border-slate-300', 'px-3', 'text-center', 'underline', 'text-primary-300' )
+          const link = document.createElement('a')
+          link.href ="#";
+          link.setAttribute('data-href', item.id);
+          link.textContent = '病歷';
+          cell5.appendChild(link)
+  
+          cell6.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
+          const attendBtn = document.createElement('input')
+          attendBtn.type = 'button'
+          attendBtn.value = status
+          attendBtn.setAttribute('data-id', item.id);
+          attendBtn.setAttribute('data-status', item.attendStatus);
+          attendBtn.classList.add('px-3', 'ml-1', 'rounded-lg', 'text-white', 'bg-primary-300', 'hover:bg-primary-400', 'cursor-pointer', 'attendStatus')
+          cell6.appendChild(attendBtn)
         }
         // 判斷日期
-        else if (e.target.value == item.date) {
-          const newRow = appointmentTable.insertRow() // 創建新行
-          // 創建表格資料
-          const cell1 = newRow.insertCell(0)
-          const cell2 = newRow.insertCell(1)
-          const cell3 = newRow.insertCell(2)
-          const cell4 = newRow.insertCell(3)
-          const cell5 = newRow.insertCell(4)
-          const cell6 = newRow.insertCell(5)
-          const cell7 = newRow.insertCell(6)
-
-          cell1.classList.add('border', 'border-slate-300', 'px-3')
-          cell1.textContent = rowCount
-          rowCount++
-
-          cell2.classList.add('border', 'border-slate-300', 'px-3')
-          cell2.textContent = item.name
-
-          cell3.classList.add('border', 'border-slate-300', 'px-3')
-          cell3.textContent = item.sex
-
-          cell4.classList.add('border', 'border-slate-300', 'px-3')
-          cell4.textContent = item.birth
-
-          cell5.classList.add('border', 'border-slate-300', 'px-3')
-          cell5.textContent = item.time
-
-          cell6.classList.add('border', 'border-slate-300', 'px-3')
-          cell6.textContent = item.symptom
-
-          cell7.classList.add('border', 'border-slate-300', 'px-3')
-          const modifyBtn = document.createElement('input')
-          modifyBtn.type = 'button'
-          modifyBtn.value = '修改'
-          modifyBtn.classList.add('px-3', 'rounded-lg', 'text-white', 'bg-primary-300', 'hover:bg-primary-400', 'cursor-pointer')
-          cell7.appendChild(modifyBtn)
-
-          const deleteBtn = document.createElement('input')
-          deleteBtn.type = 'button'
-          deleteBtn.value = '刪除'
-          deleteBtn.classList.add('px-3', 'ml-1', 'rounded-lg', 'text-white', 'bg-primary-300', 'hover:bg-primary-400', 'cursor-pointer')
-          cell7.appendChild(deleteBtn)
+        else if (nowDate == item.date) {
+         //判斷看診狀態
+         let status ="";
+        if(item.attendStatus==true){
+          status = "已看診"
+        }else{
+          status = "未看診"
+        }
+            const newRow = appointmentTable.insertRow() // 創建新行
+            // 創建表格資料
+            const cell1 = newRow.insertCell(0)
+            const cell2 = newRow.insertCell(1)
+            const cell3 = newRow.insertCell(2)
+            const cell4 = newRow.insertCell(3)
+            const cell5 = newRow.insertCell(4)
+            const cell6 = newRow.insertCell(5)
+          
+            cell1.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
+            cell1.textContent = rowCount
+            rowCount++
+          
+            cell2.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
+            cell2.textContent = item.name
+          
+            cell3.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
+            cell3.textContent = item.sex
+          
+            cell4.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
+            cell4.textContent = item.birth
+          
+            cell5.classList.add('border', 'border-slate-300', 'px-3', 'text-center', 'underline', 'text-primary-300' )
+            const link = document.createElement('a')
+            link.href ="#";
+            link.setAttribute('data-href', item.id);
+            link.textContent = '病歷';
+            cell5.appendChild(link)
+          
+            cell6.classList.add('border', 'border-slate-300', 'px-3', 'text-center')
+            const attendBtn = document.createElement('input')
+            attendBtn.type = 'button'
+            attendBtn.value = status
+            attendBtn.setAttribute('data-id', item.id);
+            attendBtn.setAttribute('data-status', item.attendStatus);
+            attendBtn.classList.add('px-3', 'ml-1', 'rounded-lg', 'text-white', 'bg-primary-300', 'hover:bg-primary-400', 'cursor-pointer', 'attendStatus')
+            cell6.appendChild(attendBtn)
+          
         }
       })
-    })
   })
+})
 
-// 叫號系統
+}
+getAppointmentList()
+
+    //編輯看診狀態
+    appointmentTable.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      let orderId = e.target.getAttribute('data-id');
+   
+      let appointmentStatus = e.target.getAttribute('data-status');
+ 
+      if (appointmentStatus == 'true'){
+              axios.patch(`https://yameiproject.onrender.com/Appointment/${orderId}`, {
+                attendStatus : false
+              }) 
+              appointmentTable.innerHTML = "";
+              rowCount = 1 ;
+              getAppointmentList();
+            }else{
+              axios.patch(`https://yameiproject.onrender.com/Appointment/${orderId}`, {
+                attendStatus : true 
+              })
+              appointmentTable.innerHTML = "";
+              rowCount = 1 ;
+              getAppointmentList();
+              
+            }
+            let dataHref = e.target.getAttribute('data-href');
+            
+            if(dataHref== null) {
+              return;
+            }else{
+            window.location.href = 'yaMeiProject/back/appointment-record.html';
+            }
+            
+    })
+
+    
+    // 叫號系統
 const num = document.querySelector('.num')
 const nextBtn = document.querySelector('.nextBtn')
 
@@ -163,6 +213,7 @@ let count = 0
 nextBtn.addEventListener('click', function (e) {
   count++
   num.textContent = `${count}`
+  localStorage.setItem('callNumber',count.toString());
 })
 
 // 歸零
@@ -171,4 +222,6 @@ const zeroBtn = document.querySelector('.zeroBtn')
 zeroBtn.addEventListener('click', function (e) {
   count = 0
   num.textContent = `${count}`
+  localStorage.setItem('callNumber',count.toString());
 })
+

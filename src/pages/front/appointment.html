@@ -14,34 +14,42 @@
 
 <body>
   <%- include('public/layouts/header.ejs') %>
-    <div class="bg-primary-100">
-      <div class="w-3/4 m-auto">
-        <!-- 當前看診號碼 -->
-        <div>
-          <h1 class=" mt-20 pt-8 title-font mb-2">當前看診號碼</h1>
-          <h2 class="text-4xl font-black E-font md:mb-32"> </h2>
-          <div class="py-12  text-center">
-            <span class="text-xl  pl-3">目前看診號碼:</span>
-            <span class="text-5xl font-black  pl-3">10</span>
+
+  <div class="bg-primary-100">
+    <div class="w-3/4 m-auto">
+      <!-- 當前看診號碼 -->
+      <div>
+        <h1 class=" mt-20 pt-8 title-font mb-2">當前看診號碼</h1>
+        <h2 class="text-4xl font-black E-font md:mb-32"> </h2>
+        <div class="py-12  text-center">
+          <span class="text-xl  pl-3">目前看診號碼:</span>
+          <span class="text-5xl font-black  pl-3 nowNum">10</span>
+
           </div>
+
         </div>
 
-        <!-- 預約查詢 -->
-        <div>
-          <h1 class="title-font mb-2">預約查詢</h1>
-          <h2 class="E-font md:mb-32">Inquire</h2>
-          <h3 class="text-3xl font-black text-center py-12">查詢預約訊息</h3>
-          <div class="flex justify-center">
-            <form data-appointmentInfo-form>
-              <label for="idNum" class="text-center lg:text-2xl font-black  pr-3 ">身分證字號:</label>
-              <input type="text" name="searchIdNum" id="" placeholder="請輸入身分證字號"
-                class="idNum pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
-              <button type="submit"
-                class="inquire ml-5 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">查詢</button>
-            </form>
+
+      <!-- 預約查詢 -->
+      <div>
+        <h1 class="title-font mb-2">預約查詢</h1>
+        <h2 class="E-font md:mb-32">Inquire</h2>
+        <h3 class="text-3xl font-black text-center py-12">查詢預約訊息</h3>
+        <div class="flex justify-center">
+          <form data-appointmentInfo-form>
+            <label for="idNum" class="text-center lg:text-2xl font-black  pr-3 ">身分證字號:</label>
+            <input type="text" name="searchIdNum" id="" placeholder="請輸入身分證字號"
+              class="idNum pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+              <div class="flex justify-center mt-5">
+            <button type="submit"
+              class="inquire ml-5 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">查詢</button>
+            </div>
+          </form>
+
           </div>
           <!-- 搜尋結果 -->
           <div class="inquireInfo"></div>
+
         </div>
 
         <!-- 診所預約 -->
@@ -136,28 +144,32 @@
 
             <span class="remindIdNum"></span>
 
-            <!-- 檢查輸入訊息 -->
-            <div class="checkInfo bg-white">
-              <h3 class="bg-primary-300 text-center px-12 text-white">請檢查輸入訊息</h3>
-              <div class="bg-white p-3">
-                <h4 class="text-center px-12 text-primary-300 underline">症狀</h4>
-                <p class="departCheck p-3">門診科別</p>
-                <p class="symptomCheck p-3">症狀</p>
-                <h4 class="text-center px-12 text-primary-300 underline">預約日期及時間</h4>
-                <p class="dateCheck p-3">預約日期</p>
-                <p class="timeCheck p-3">預約時間</p>
-                <h4 class="text-center px-12 text-primary-300">基本資料</h4>
-                <p class="nameCheck p-3">姓名</p>
-                <p class="sexCheck p-3">性別</p>
-                <p class="idNumCheck p-3">身分證字號</p>
-                <p class="birthCheck p-3">出生日期</p>
-                <p class="mailCheck p-3">電子郵件</p>
-                <p class="phoneCheck p-3">手機</p>
-                <p class="remarkCheck p-3"></p>
-                <div class="flex justify-center">
-                  <input type="submit" value="確認預約" id=""
-                    class="save mt-10 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+
+          <!-- 檢查輸入訊息 -->
+          <div class="checkInfo bg-white">
+            <h3 class="bg-primary-300 text-center px-12 text-white">請檢查輸入訊息</h3>
+            <div class="bg-white p-3">
+              <h4 class="text-center px-12 text-primary-300 underline">症狀</h4>
+              <p class="departCheck p-3">門診科別</p>
+              <p class="symptomCheck p-3">症狀</p>
+              <h4 class="text-center px-12 text-primary-300 underline">預約日期及時間</h4>
+              <p class="dateCheck p-3">預約日期</p>
+              <p class="timeCheck p-3">預約時間</p>
+              <p class="numCheck p-3">預約號碼</p>
+              <h4 class="text-center px-12 text-primary-300">基本資料</h4>
+              <p class="nameCheck p-3">姓名</p>
+              <p class="sexCheck p-3">性別</p>
+              <p class="idNumCheck p-3">身分證字號</p>
+              <p class="birthCheck p-3">出生日期</p>
+              <p class="mailCheck p-3">電子郵件</p>
+              <p class="phoneCheck p-3">手機</p>
+              <p class="remarkCheck p-3"></p>
+              <div class="flex justify-center">
+                <input type="submit" value="確認預約" id=""
+                  class="save mt-10 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+
                 </div>
+
               </div>
             </div>
 
@@ -166,10 +178,17 @@
       </div>
     </div>
 
-    <%- include('public/layouts/footer.ejs') %>
-      <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-      <script type="module" src="../../js/appointment.js"></script>
-      <script type="module" src="../../../main.js"></script>
+      <%- include('public/layouts/footer.ejs') %>
+
+        <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+        <script src="../../js/appointment.js"></script>
+
+        <!-- 載入main.js -->
+        <script type="module" src="../../../main.js"></script>
+
+        <!-- 載入font awesome cdn -->
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+        integrity="sha512-..." crossorigin="anonymous"></script>
 </body>
 
 </html>

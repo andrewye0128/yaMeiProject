@@ -1,5 +1,15 @@
+//目前看診號碼
+const nowNum = document.querySelector('.nowNum');
+
+function getNum(){
+  let callNumberStr = localStorage.getItem('callNumber') ;
+  nowNum.textContent = `${callNumberStr}`;
+}
+
+getNum();
+
 // 查詢預約資訊
-axios.get('http://localhost:4000/Appointment')
+axios.get('https://yameiproject.onrender.com/Appointment')
   .then(function (response) {
     const data = response.data
    
@@ -22,6 +32,7 @@ axios.get('http://localhost:4000/Appointment')
      <p class="dateCheck p-3 text-center ">預約日期</p>
      <p class="timeCheck p-3 text-center ">${data.time}</p>
      <h4 class="text-center px-12 text-primary-300">看診號碼</h4>
+     <p class="timeCheck p-3 text-center ">${data.num}</p>
 
      </div>
      </div>`
@@ -57,6 +68,7 @@ const remark = document.querySelector('.remark')
 const departCheck = document.querySelector('.departCheck')
 const dateCheck = document.querySelector('.dateCheck')
 const timeCheck = document.querySelector('.timeCheck')
+const numCheck = document.querySelector(".numCheck")
 const symptomCheck = document.querySelector('.symptomCheck')
 const nameCheck = document.querySelector('.nameCheck')
 const idNumCheck = document.querySelector('.idNumCheck')
@@ -84,6 +96,34 @@ send.addEventListener('click', function (e) {
   mailCheck.innerHTML = `<p>${mail.value}</p>`
   phoneCheck.innerHTML = `<p>${phone.value}</p>`
   remarkCheck.innerHTML = `<p>${remark.value}</p>`
+
+//預約號碼生成
+axios.get("https://yameiproject.onrender.com/Appointment")
+.then(function(response){
+let data = response.data ;
+//const date = document.querySelector('#date')
+
+let dateTotal={};
+data.forEach(function(item){
+    if(dateTotal[item.date] == undefined){
+      dateTotal[item.date]=1
+    }else {
+      dateTotal[item.date]+=1
+    }
+  })
+
+  let dateArr = Object.keys(dateTotal)
+  let numArr = Object.values(dateTotal)
+  let indexOfDate = dateArr.indexOf(date.value)
+
+if (indexOfDate !== -1){
+  let numIndex = numArr[indexOfDate]
+  numCheck.innerHTML=`<span>${numIndex+1}</span>`
+}else{
+  numCheck.innerHTML=`<span >1</span>`
+}
+
+})
 })
 
 // 將預約表單資訊推入資料庫
@@ -95,11 +135,12 @@ save.addEventListener('click', function (e) {
   const symptom = document.querySelector('#symptom')
   const date = document.querySelector('#date')
   const selected = document.querySelector('input[type=radio][name=sex]:checked')
-  axios.post('http://localhost:4000/Appointment', {
+  axios.post('https://yameiproject.onrender.com/Appointment', {
 
     depart: selectDepart.value,
     date: date.value,
     time: selectTime.value,
+    num: numCheck.innerText,
     symptom: symptom.value,
     name: nameId.value,
     sex: selected.value,
@@ -107,7 +148,8 @@ save.addEventListener('click', function (e) {
     birth: birth.value,
     mail: mail.value,
     phone: phone.value,
-    remark: remark.value
+    remark: remark.value,
+    attendStatus: false
   })
 
   alert('預約成功')
