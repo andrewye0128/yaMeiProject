@@ -1,8 +1,19 @@
+import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm'
+// 目前看診號碼
+const nowNum = document.querySelector('.nowNum')
+
+function getNum() {
+  const callNumberStr = localStorage.getItem('callNumber')
+  nowNum.textContent = `${callNumberStr}`
+}
+
+getNum()
+
 // 查詢預約資訊
-axios.get('http://localhost:4000/Appointment')
+axios.get('https://yameiproject.onrender.com/Appointment')
   .then(function (response) {
     const data = response.data
-   
+
     // 渲染資料到畫面上
     function renderInfo(targetHTML) {
       const inquireInfo = document.querySelector('.inquireInfo')
@@ -22,6 +33,7 @@ axios.get('http://localhost:4000/Appointment')
      <p class="dateCheck p-3 text-center ">預約日期</p>
      <p class="timeCheck p-3 text-center ">${data.time}</p>
      <h4 class="text-center px-12 text-primary-300">看診號碼</h4>
+     <p class="timeCheck p-3 text-center ">${data.num}</p>
 
      </div>
      </div>`
@@ -30,11 +42,11 @@ axios.get('http://localhost:4000/Appointment')
 
     document.querySelector('[data-appointmentInfo-form]').addEventListener('submit', (e) => {
       e.preventDefault()
-      if (inquireFilter(e.target.searchIdNum.value).length > 0 ){
-      renderInfo(generateInquireHTML(inquireFilter(e.target.searchIdNum.value)))
-    }else{
-      alert(`查無此資料`)
-    }
+      if (inquireFilter(e.target.searchIdNum.value).length > 0) {
+        renderInfo(generateInquireHTML(inquireFilter(e.target.searchIdNum.value)))
+      } else {
+        alert('查無此資料')
+      }
     })
 
     function inquireFilter(targetInfo, allAppointment = data) {
@@ -44,7 +56,7 @@ axios.get('http://localhost:4000/Appointment')
     }
   })
 
-// 預約表單
+// 送出預約表單資訊
 const send = document.querySelector('.send')
 
 const nameId = document.querySelector('.name')
@@ -57,6 +69,7 @@ const remark = document.querySelector('.remark')
 const departCheck = document.querySelector('.departCheck')
 const dateCheck = document.querySelector('.dateCheck')
 const timeCheck = document.querySelector('.timeCheck')
+const numCheck = document.querySelector('.numCheck')
 const symptomCheck = document.querySelector('.symptomCheck')
 const nameCheck = document.querySelector('.nameCheck')
 const idNumCheck = document.querySelector('.idNumCheck')
@@ -66,60 +79,123 @@ const phoneCheck = document.querySelector('.phoneCheck')
 const sexCheck = document.querySelector('.sexCheck')
 const remarkCheck = document.querySelector('.remarkCheck')
 
-// 送出預約表單資訊
-send.addEventListener('click', function (e) {
-  const selectDepart = document.querySelector('input[type=radio][name=department]:checked')
-  departCheck.innerHTML = `<p>${selectDepart.value}</p>`
-  const selectTime = document.querySelector('input[type=radio][name=time]:checked')
-  timeCheck.innerHTML = `<p>${selectTime.value}</p>`
-  const selected = document.querySelector('input[type=radio][name=sex]:checked')
-  sexCheck.innerHTML = `<p>${selected.value}</p>`
-  const symptom = document.querySelector('#symptom')
-  symptomCheck.innerHTML = `<p>${symptom.value}</p>`
-  const date = document.querySelector('#date')
-  dateCheck.innerHTML = `<p>${date.value}</p>`
-  nameCheck.innerHTML = `<p>${nameId.value}</p>`
-  idNumCheck.innerHTML = `<p>${idNumber.value}</p>`
-  birthCheck.innerHTML = `<p>${birth.value}</p>`
-  mailCheck.innerHTML = `<p>${mail.value}</p>`
-  phoneCheck.innerHTML = `<p>${phone.value}</p>`
-  remarkCheck.innerHTML = `<p>${remark.value}</p>`
-})
+function sendForm() {
+  // 預約表單
+  send.addEventListener('click', function (e) {
+    const selectDepart = document.querySelector('input[type=radio][name=department]:checked')
+    departCheck.innerHTML = `<p>${selectDepart.value}</p>`
+    const selectTime = document.querySelector('input[type=radio][name=time]:checked')
+    timeCheck.innerHTML = `<p>${selectTime.value}</p>`
+    const selected = document.querySelector('input[type=radio][name=sex]:checked')
+    sexCheck.innerHTML = `<p>${selected.value}</p>`
+    const symptom = document.querySelector('#symptom')
+    symptomCheck.innerHTML = `<p>${symptom.value}</p>`
+    const date = document.querySelector('#date')
+    dateCheck.innerHTML = `<p>${date.value}</p>`
+    nameCheck.innerHTML = `<p>${nameId.value}</p>`
+    idNumCheck.innerHTML = `<p>${idNumber.value}</p>`
+    birthCheck.innerHTML = `<p>${birth.value}</p>`
+    mailCheck.innerHTML = `<p>${mail.value}</p>`
+    phoneCheck.innerHTML = `<p>${phone.value}</p>`
+    remarkCheck.innerHTML = `<p>${remark.value}</p>`
+
+    // 預約號碼生成
+    axios.get('https://yameiproject.onrender.com/Appointment')
+      .then(function (response) {
+        const data = response.data
+        // const date = document.querySelector('#date')
+
+        const dateTotal = {}
+        data.forEach(function (item) {
+          if (dateTotal[item.date] == undefined) {
+            dateTotal[item.date] = 1
+          } else {
+            dateTotal[item.date] += 1
+          }
+        })
+
+        const dateArr = Object.keys(dateTotal)
+        const numArr = Object.values(dateTotal)
+        const indexOfDate = dateArr.indexOf(date.value)
+
+        if (indexOfDate !== -1) {
+          const numIndex = numArr[indexOfDate]
+          numCheck.innerHTML = `<span>${numIndex + 1}</span>`
+        } else {
+          numCheck.innerHTML = '<span >1</span>'
+        }
+      })
+  })
+}
 
 // 將預約表單資訊推入資料庫
 const save = document.querySelector('.save')
 
-save.addEventListener('click', function (e) {
-  const selectDepart = document.querySelector('input[type=radio][name=department]:checked')
-  const selectTime = document.querySelector('input[type=radio][name=time]:checked')
-  const symptom = document.querySelector('#symptom')
-  const date = document.querySelector('#date')
-  const selected = document.querySelector('input[type=radio][name=sex]:checked')
-  axios.post('http://localhost:4000/Appointment', {
+function saveForm() {
+  save.addEventListener('click', function (e) {
+    const selectDepart = document.querySelector('input[type=radio][name=department]:checked')
+    const selectTime = document.querySelector('input[type=radio][name=time]:checked')
+    const symptom = document.querySelector('#symptom')
+    const date = document.querySelector('#date')
+    const selected = document.querySelector('input[type=radio][name=sex]:checked')
+    axios.post('https://yameiproject.onrender.com/Appointment', {
 
-    depart: selectDepart.value,
-    date: date.value,
-    time: selectTime.value,
-    symptom: symptom.value,
-    name: nameId.value,
-    sex: selected.value,
-    idNum: idNumber.value,
-    birth: birth.value,
-    mail: mail.value,
-    phone: phone.value,
-    remark: remark.value
+      depart: selectDepart.value,
+      date: date.value,
+      time: selectTime.value,
+      num: numCheck.innerText,
+      symptom: symptom.value,
+      name: nameId.value,
+      sex: selected.value,
+      idNum: idNumber.value,
+      birth: birth.value,
+      mail: mail.value,
+      phone: phone.value,
+      remark: remark.value,
+      attendStatus: false
+    })
+
+    alert('預約成功')
+
+    // 清空輸入格內值，方便下次輸入
+    // selectDepart.value ="";
+    symptom.value = ''
+    date.value = ''
+    nameId.value = ''
+    idNumber.value = ''
+    birth.value = ''
+    mail.value = ''
+    phone.value = ''
+    remark.value = ''
   })
+}
 
-  alert('預約成功')
+// 將所有需要匯出的內容放入一個物件
+const appointmentModule = {
+  nowNum,
+  getNum,
+  sendForm,
+  saveForm,
+  send,
+  nameId,
+  idNumber,
+  birth,
+  mail,
+  phone,
+  remark,
+  departCheck,
+  dateCheck,
+  timeCheck,
+  numCheck,
+  symptomCheck,
+  nameCheck,
+  idNumCheck,
+  birthCheck,
+  mailCheck,
+  phoneCheck,
+  sexCheck,
+  remarkCheck
+}
 
-  // 清空輸入格內值，方便下次輸入
-  // selectDepart.value ="";
-  symptom.value = ''
-  date.value = ''
-  nameId.value = ''
-  idNumber.value = ''
-  birth.value = ''
-  mail.value = ''
-  phone.value = ''
-  remark.value = ''
-})
+// 導出整個物件
+export default appointmentModule
