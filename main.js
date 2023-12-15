@@ -1,6 +1,5 @@
 import 'tailwindcss/tailwind.css'
 import headers from './src/js/header.js'
-
 // import '@fortawesome/fontawesome-free/css/all.css'
 
 import { swiper, dialog, news } from './src/js/index.js'
