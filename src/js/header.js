@@ -64,6 +64,7 @@ function aLink() {
       // s.href = host + '/yaMeiProject/src/pages/back/login.html'
       s.href = host + '/yaMeiProject/back/login.html'
     } else if (pathNamesMap.hasOwnProperty(linkText)) {
+      console.log(pathNamesMap.hasOwnProperty(linkText));
       s.href = host + BASE_PATH + pathNamesMap[linkText] + '.html'
     }
 

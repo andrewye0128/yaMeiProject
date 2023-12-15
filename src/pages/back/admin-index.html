@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 設定css路徑 -->
+    <link rel="stylesheet" href="/src/css/tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="/src/css/index.css" />
+    <title>芽渼牙醫診所</title>
+  </head>
+
+  <body>
+    <!-- header -->
+    <%- include('public/layouts/admin-header.ejs') %>
+
+    <main class="w-10/12 flex justify-between mx-auto pt-[220px] pb-[140px]">
+      <div class="border border-2 rounded border-gray-400 w-1/6">
+        <span
+          class="flex justify-center items-center bg-primary-200 font-semibold h-12"
+          >管理員</span
+        >
+        <ul class="text-center py-4">
+          <li class="relative group">
+            <span
+              class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 left-16 z-[-1]"
+            ></span>
+            <a class="z-10" href="#">會員管理</a>
+          </li>
+        </ul>
+      </div>
+      <div class="border border-2 rounded border-gray-400 w-1/6">
+        <span
+          class="flex justify-center items-center bg-primary-200 font-semibold h-12"
+          >網站管理</span
+        >
+        <ul class="text-center py-5">
+          <li class="relative group mb-5">
+            <span
+              class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 left-16 z-[-1]"
+            ></span>
+            <a class="z-10" href="#">最新消息</a>
+          </li>
+          <li class="relative group mb-5">
+            <span
+              class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 left-16 z-[-1]"
+            ></span>
+            <a class="z-10" href="#">醫護團隊</a>
+          </li>
+          <li class="relative group mb-5">
+            <span
+              class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 left-16 z-[-1]"
+            ></span>
+            <a class="z-10" href="#">診療項目</a>
+          </li>
+        </ul>
+      </div>
+      <div class="border border-2 rounded border-gray-400 w-1/6">
+        <span
+          class="flex justify-center items-center bg-primary-200 font-semibold h-12"
+          >病歷狀態</span
+        >
+        <ul class="text-center py-4">
+          <li class="relative group mb-5">
+            <span
+              class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 left-16 z-[-1]"
+            ></span>
+            <a class="page-link z-10" href="#">病歷管理</a>
+          </li>
+          <li class="relative group">
+            <span
+              class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 left-16 z-[-1]"
+            ></span>
+            <a class="z-10" href="#">病歷紀錄</a>
+          </li>
+        </ul>
+      </div>
+      <div class="border border-2 rounded border-gray-400 w-1/6">
+        <span
+          class="flex justify-center items-center bg-primary-200 font-semibold h-12"
+          >預約管理</span
+        >
+        <ul class="text-center py-5">
+          <li class="relative group mb-5">
+            <span
+              class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 left-16 z-[-1]"
+            ></span>
+            <a class="z-10" href="#">預約設定</a>
+          </li>
+          <li class="relative group mb-5">
+            <span
+              class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 left-16 z-[-1]"
+            ></span>
+            <a class="page-link z-10" href="#">預約紀錄</a>
+          </li>
+          <li class="relative group mb-5">
+            <span
+              class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 left-16 z-[-1]"
+            ></span>
+            <a class="z-10" href="#">聊天室</a>
+          </li>
+        </ul>
+      </div>
+      <div class="border border-2 rounded border-gray-400 w-1/6">
+        <span
+          class="flex justify-center items-center bg-primary-200 font-semibold h-12"
+          >看診狀態</span
+        >
+        <ul class="text-center py-5">
+          <li class="relative group mb-5">
+            <span
+              class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 left-16 z-[-1]"
+            ></span>
+            <a class="page-link z-10" href="#">當日看診</a>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <div class="w-9/12 mx-auto flex justify-start items-center">
+      <a
+        class="text-white font-semibold border-2 border-primary-300 rounded bg-primary-300 hover:border-primary-400 hover:bg-primary-400 py-2.5 px-6"
+        href="../front/index.html"
+        >回到首頁</a
+      >
+    </div>
+
+    <!-- 載入main.js -->
+    <script type="module" src="../../js/admin-logout.js"></script>
+
+    <!-- 載入font awesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/25467b0b27.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
