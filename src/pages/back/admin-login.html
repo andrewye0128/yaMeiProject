@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 設定css路徑 -->
+    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    
+    <title>芽渼牙醫診所</title>
+    <script type="module" crossorigin src="/yaMeiProject/assets/modulepreload-polyfill.b7f2da20.js"></script>
+    <script type="module" crossorigin src="/yaMeiProject/assets/header.f8dbba0a.js"></script>
+    <script type="module" crossorigin src="/yaMeiProject/assets/auth.831a793a.js"></script>
+    <script type="module" crossorigin src="/yaMeiProject/assets/login.b1fc717c.js"></script>
+    <link rel="stylesheet" href="/yaMeiProject/assets/tailwind.bc2e35dc.css">
+    <link rel="stylesheet" href="/yaMeiProject/assets/index.b2162d7b.css">
+  </head>
+
+  <body>
+    <!-- header -->
+    <header id="header" class="fixed w-screen h-20 font-sanst border shadow-xl bg-white z-10 top-0">
+  <div class="  w-9/12 h-full mx-auto flex items-center justify-between">
+    <a class="block" href="https://alannayl.github.io/yaMeiProject/front/index.html">
+      <img class="w-48 h-10" src="/yaMeiProject/assets/logo.2bfbf08d.svg" alt="logo">
+    </a>
+    <div class="w-3/5 flex items-center justify-end">
+      <ul class="w-[799px]  flex-row items-center justify-between gap-2 font-sans text-xl font-semibold hidden xl:flex">
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a class="z-10" href="https://alannayl.github.io/yaMeiProject/front/clinic-intro.html">診所介紹</a>
+        </li>
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/front/treatment.html">服務項目</a>
+        </li>
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/front/medical-team.html">醫護團隊</a>
+        </li>
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/front/appointment">診所預約</a>
+        </li>
+        <li id="login-name" class="relative group">
+          <span class="block absolute w-[90px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/fback/login.html">登入/註冊</a>
+        </li>
+      </ul>
+      <span class="material-symbols-outlined cursor-pointer xl:invisible" id="menu">
+        menu
+      </span>
+    </div>
+  </div>
+</header>
+<div
+  class="w-0 fixed  font-sans text-xl font-semibold overflow-x-hidden flex flex-col    bg-primary-100 z-20 transition-all ease-in-out delay-150 top-0 right-0"
+  id="links">
+  <div class="w-10/12 h-20 mx-auto flex items-center justify-end mb-24">
+    <span class="material-symbols-outlined cursor-pointer border-yellow-500" id="close">
+      close
+    </span>
+  </div>
+  <div class="w-[375px] h-[680px] mx-auto flex flex-col items-center border-yellow-500">
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1] "></span>
+      <a class="block">診所介紹</a>
+    </div>
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="#">服務項目</a>
+    </div>
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="#">醫護團隊</a>
+    </div>
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="#">診所預約</a>
+    </div>
+    <div class="relative group">
+      <span class="block absolute w-full h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="https://alannayl.github.io/yaMeiProject/fback/login.html">登入/註冊</a>
+    </div>
+  </div>
+</div>
+
+    <div
+      class="w-4/5 mx-auto flex flex-col items-center justify-center pt-32 pb-10"
+    >
+      <p class="text-[28px] font-bold text-center mb-7">後台登入</p>
+      <form id="adminLogin-form" class="w-[356px]">
+        <div class="relative mb-8">
+          <label class="w-full">
+            <input
+              id="email"
+              type="text"
+              class="w-full h-12 pl-3.5 pt-5 border-0 border-b-[2.5px] border-[#657786] bg-primary-100 focus:outline-0 focus:border-[#1e4bd1]"
+              placeholder="請輸入帳號"
+              required
+            />
+            <span class="absolute top-0 left-3.5 text-sm font-[550]">帳號</span>
+          </label>
+        </div>
+        <div class="relative mb-8">
+          <label class="w-full">
+            <input
+              id="password"
+              type="password"
+              class="w-full h-12 pl-3.5 pt-5 border-0 border-b-[2.5px] border-[#657786] bg-primary-100 focus:outline-0 focus:border-[#1e4bd1]"
+              placeholder="請輸入密碼"
+              required
+            />
+            <span class="absolute top-0 left-3.5 text-sm font-[550]">密碼</span>
+          </label>
+        </div>
+        <button
+          type="submit"
+          class="w-full py-2 px-6 text-white text-xl font-bold mb-5 mt-[1.5rem] bg-primary-300 rounded-[50px] hover:bg-primary-400"
+        >
+          登入
+        </button>
+      </form>
+      <div class="w-[356px]">
+        <div class="flex justify-end">
+          <a
+            class="block mr-3.5 text-blue-600 text-center underline decoration-2"
+            href="./login.html"
+          >
+            前台登入
+          </a>
+          <span class="mr-3.5">&bull;</span>
+          <a
+            class="block text-blue-600 text-center underline decoration-2"
+            href="./sign-up.html"
+          >
+            註冊
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="h-377 md:h-113 py-16 md:py-100 font-sanst">
+  <div class="w-8/12 mx-auto flex flex-col items-center justify-center md:flex-row md:justify-between">
+    <ul class="w-[287px] lg:w-[495px] flex justify-between">
+      <li class="md:text-xl lg:text-xl font-bold">
+        <a class="block mb-6" href="#">最新消息</a>
+        <a class="block mb-6" href="#">門診時間</a>
+        <a class="block mb-6" href="#">診所資訊</a>
+        <a class="block mb-6" href="#">診所評論</a>
+      </li>
+      <li class="text-xl">
+        <a class="block font-bold mb-6" href="#">服務項目</a>
+        <a class="block mb-6" href="#">一般牙科</a>
+        <a class="block mb-6" href="#">美容牙科</a>
+        <a class="block mb-6" href="#">兒童牙科</a>
+        <a class="block mb-6" href="#">牙齒矯正</a>
+      </li>
+      <li class="text-xl font-bold">
+        <a class="block mb-6" href="#">醫護團隊</a>
+        <a class="block mb-6" href="#">診所預約</a>
+      </li>
+    </ul>
+    <div class="h-64 flex flex-col items-center justify-center md:justify-between">
+      <a class="block" href="../../pages/front/index.html">
+        <img class="w-48 h-10 invisible md:visible" src="/yaMeiProject/assets/logo.2bfbf08d.svg" alt="logo">
+      </a>
+      <div>
+        <ul class="flex justify-between mb-5">
+          <li>
+            <a class="w-60 h-60 flex items-center justify-center font-bold rounded-full text-primary-400 bg-primary-100"
+              href="#">
+              <i class="fa-brands fa-line fa-2xl"></i>
+            </a>
+          </li>
+          <li>
+            <a class="w-60 h-60 flex items-center justify-center font-bold rounded-full text-primary-400 bg-primary-100"
+              href="#">
+              <i class="fa-brands fa-instagram fa-2xl"></i>
+            </a>
+          </li>
+          <li>
+            <a class="w-60 h-60 flex items-center justify-center font-bold rounded-full text-primary-400 bg-primary-100"
+              href="#">
+              <i class="fa-brands fa-facebook fa-2xl"></i>
+            </a>
+          </li>
+        </ul>
+        <P class="text-gray-500 font-medium">
+          ©芽渼牙醫診所 DENTAL CLINIC.
+        </P>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- 載入js -->
+      
+
+    <!-- 載入sweetlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- 載入font awesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/25467b0b27.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

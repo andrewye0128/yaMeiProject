@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芽渼牙醫診所-診療項目</title>
+    
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
+    <!-- 使用FontAwesome的CDN引入CSS文件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" />
+  <script type="module" crossorigin src="/yaMeiProject/assets/modulepreload-polyfill.b7f2da20.js"></script>
+  <script type="module" crossorigin src="/yaMeiProject/assets/header.f8dbba0a.js"></script>
+  <script type="module" crossorigin src="/yaMeiProject/assets/auth.831a793a.js"></script>
+  <script type="module" crossorigin src="/yaMeiProject/assets/main.a2ed485e.js"></script>
+  <link rel="stylesheet" href="/yaMeiProject/assets/main.5046967f.css">
+  <link rel="stylesheet" href="/yaMeiProject/assets/front\\treatment.36501bda.css">
+  <link rel="stylesheet" href="/yaMeiProject/assets/tailwind.bc2e35dc.css">
+</head>
+
+<body>
+    <header id="header" class="fixed w-screen h-20 font-sanst border shadow-xl bg-white z-10 top-0">
+  <div class="  w-9/12 h-full mx-auto flex items-center justify-between">
+    <a class="block" href="https://alannayl.github.io/yaMeiProject/front/index.html">
+      <img class="w-48 h-10" src="/yaMeiProject/assets/logo.2bfbf08d.svg" alt="logo">
+    </a>
+    <div class="w-3/5 flex items-center justify-end">
+      <ul class="w-[799px]  flex-row items-center justify-between gap-2 font-sans text-xl font-semibold hidden xl:flex">
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a class="z-10" href="https://alannayl.github.io/yaMeiProject/front/clinic-intro.html">診所介紹</a>
+        </li>
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/front/treatment.html">服務項目</a>
+        </li>
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/front/medical-team.html">醫護團隊</a>
+        </li>
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/front/appointment">診所預約</a>
+        </li>
+        <li id="login-name" class="relative group">
+          <span class="block absolute w-[90px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/fback/login.html">登入/註冊</a>
+        </li>
+      </ul>
+      <span class="material-symbols-outlined cursor-pointer xl:invisible" id="menu">
+        menu
+      </span>
+    </div>
+  </div>
+</header>
+<div
+  class="w-0 fixed  font-sans text-xl font-semibold overflow-x-hidden flex flex-col    bg-primary-100 z-20 transition-all ease-in-out delay-150 top-0 right-0"
+  id="links">
+  <div class="w-10/12 h-20 mx-auto flex items-center justify-end mb-24">
+    <span class="material-symbols-outlined cursor-pointer border-yellow-500" id="close">
+      close
+    </span>
+  </div>
+  <div class="w-[375px] h-[680px] mx-auto flex flex-col items-center border-yellow-500">
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1] "></span>
+      <a class="block">診所介紹</a>
+    </div>
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="#">服務項目</a>
+    </div>
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="#">醫護團隊</a>
+    </div>
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="#">診所預約</a>
+    </div>
+    <div class="relative group">
+      <span class="block absolute w-full h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="https://alannayl.github.io/yaMeiProject/fback/login.html">登入/註冊</a>
+    </div>
+  </div>
+</div>
+    <div class="treatment-box w-full border-box bg-primary-100 px-3 py-16 md:px-40 md:py-16 lg:px-56">
+  <div class="treatment-title text-center mb-8 md:flex flex-col items-center md:items-baseline">
+    <h2 class="title-font mb-2">診療項目</h2>
+    <span class="E-font ">Treatment</span>
+  </div>
+  <div class="content">
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="/yaMeiProject/assets/rdesign_14813 1.6f80c474.png" alt="">
+      </div>
+      <div class="treatment-name">一般牙科</div>
+      <a href="#one" class="btn font-semibold text-center cursor-pointer">查看更多</a>
+    </div>
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="/yaMeiProject/assets/rdesign_14813 2.ded3b146.png" alt="">
+      </div>
+      <div class="treatment-name">兒童牙科</div>
+      <a href="#two" class="btn font-semibold text-center cursor-pointer">查看更多</a>
+    </div>
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="/yaMeiProject/assets/rdesign_14813 3.10381470.png" alt="">
+      </div>
+      <div class="treatment-name">牙齒矯正</div>
+      <a href="#three" class="btn font-semibold text-center cursor-pointer">查看更多</a>
+    </div>
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="data:image/png;base64,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" alt="">
+      </div>
+      <div class="treatment-name">美容牙科</div>
+      <a href="#four" class="btn font-semibold text-center cursor-pointer">查看更多</a>
+    </div>
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="/yaMeiProject/assets/rdesign_14813 5.769e5c72.png" alt="">
+      </div>
+      <div class="treatment-name">人工植牙</div>
+      <a href="#five" class="btn font-semibold text-center cursor-pointer">查看更多</a>
+    </div>
+    <div class="review-card bg-white flex flex-col items-center justify-center">
+      <div class="treatment-pic">
+        <img src="data:image/png;base64,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" alt="">
+      </div>
+      <div class="treatment-name">其他診療項目</div>
+      <a href="#six" class="btn font-semibold text-center cursor-pointer">查看更多</a>
+    </div>
+  </div>
+</div>
+
+<style>.title-font {
+  font-family: 'Noto Sans TC';
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 0.08em;
+}
+.E-font {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.08em;
+  color: #198783;
+}
+.treatment-box .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.treatment-box .review-card {
+  width: 100%;
+  max-width: 351px;
+  height: 242px;
+  margin-bottom: 24px;
+}
+.treatment-name {
+  color: #363636;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+.treatment-box .review-card .btn {
+  color: #666666;
+  background: #f0f0f0;
+  width: 108px;
+  height: 36px;
+  padding: 6px 20px;
+  border-radius: 25px;
+}
+@media (min-width:768px) {
+  .title-font {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 38px;
+    letter-spacing: 0.08em;
+    text-align: left;
+  }
+  .E-font {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0.08em;
+    text-align: left;
+  }
+  .E-font::after {
+    content: "";
+    width: 100px;
+    display: inline-block;
+    margin: 4px;
+    border: 1.5px solid #198783;
+  }
+  .treatment-box .content {
+    max-width: calc(1296px * .75);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .treatment-title {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 24px;
+  }
+  .treatment-box .review-card {
+    max-width: 48%;
+    height: calc(396px * .75);
+  }
+}
+@media (min-width: 1075px) {
+  .treatment-box .review-card {
+    max-width: 31%;
+  }
+}
+@media (min-width: 1900px) {
+  .treatment-box .content {
+    max-width: 1296px;
+  }
+  .treatment-box .review-card {
+    max-width: 412px;
+    height: 396px;
+  }
+}</style>
+
+<script>
+  let links = document.querySelectorAll('a')
+  const host = window.location.origin
+  // 開發用請使用這個路徑
+  // const BASE_PATH = '/yaMeiProject/src/pages/front/'
+  const BASE_PATH = '/yaMeiProject/front/'
+
+
+  for (let link of links) {
+    link.href = host + BASE_PATH + 'treatment.html'
+  }
+</script>
+        <div class="news-box box-border inline-flex flex-col items-center  md:justify-around">
+            <div class="news-title text-center mb-10 md:flex flex-col items-center md:items-baseline">
+                <h2 class="title-font mb-2">診療項目</h2>
+                <span class="E-font md:mb-32">treatment</span>
+            </div>
+            <div class="dental-items sm:w-[375px] lg:w-[1000px]">
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4
+                xl:flex" id="one">
+                    <div class="treat-pic mb-4 xl:mr-5 flex items-center">
+                        <img src="https://www.fed.com.tw/data/service/cover/1672025877838374920.jpg">
+                    </div>
+                    <div class="dental-info ml-5 xl:mt-10 xl:ml-5">
+                        <h2 class="treat-font mb-4">一般牙科</h2>
+                        <p class="item-font mb-4 w-[350px] text-black text-justify">
+                            對初診及複診的患者全面口腔檢查及初步的治療
+                            ，針對每位患者的病癥部位來醫治，依據病例的複雜程度，會與其他次專科醫師會照，完成完整的治療計劃，依計劃分工合作進行療程。</p>
+                        <div class="font-black mb-2">家庭牙科診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 全口牙齒健康檢查及初步治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 擬定完整口腔治療計畫 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 全口齒垢刮除術(洗牙) </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 轉介專科會診及介入治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 簡易及緊急處理</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 口腔衛教</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4 xl:flex flex-row-reverse" id="two">
+                    <div class="mb-4 xl:mr-5 flex items-center">
+                        <img src="https://www.fed.com.tw/data/service/cover/1621408856440480696.jpg">
+                    </div>
+                    <div class="dental-info mt-10 ml-5 xl:mr-10">
+                        <h2 class="treat-font mb-4">兒童牙科</h2>
+                        <p class="item-font mb-4 w-[350px] text-black text-justify">
+                            針對成長發育中的兒童及青少年進行牙齒健康護理，全面維護兒童口腔的健康，依照永久齒的發育曲線適當處理，並注重孩童在醫療過程中的心理狀況，讓孩子們的牙齒、顏面都能健全發育。</p>
+                            <div class="font-black mb-2">兒童牙科診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 定期口腔健檢及塗氟</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 齲齒預防與治療 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 乳牙/恆牙外傷治療 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 教育機關牙齒宣導及訓練</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 針對過度恐懼孩童提供舒眠治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> MRC兒童肌咬合訓練</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4 xl:flex" id="three">
+                    <div class="pic mb-4 xl:mr-5 flex items-center">
+                        <img src="https://www.fed.com.tw/data/service/cover/1621410108433363101.jpg">
+                    </div>
+                    <div class="dental-info mt-10 ml-5">
+                        <h2 class="treat-font mb-4">牙齒矯正</h2>
+                        <p class="item-font mb-4 w-[350px] text-black text-justify">
+                            對牙齒或齒列的異常咬合的患者，依照不同程度的齒顎不整，量身打造最適切的療程內容，將牙齒調整至適當的狀況，獲得口腔健康、功能與美觀上的改善，會提供後續注意事項以及保健資訊。</p>
+                            <div class="font-black mb-2">牙齒矯正診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 隱適美隱形矯正</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 兒童隱適美矯正 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 數位隱形牙套，兒童隱適美(Invisalign) </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 口腔肌肉功能訓練</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> MRC肌咬合訓練 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 一般矯正器 </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4 xl:flex flex-row-reverse" id="four">
+                    <div class="pic mb-4 xl:mr-5 flex items-center">
+                        <img src="https://www.fed.com.tw/data/service/cover/1672025877838374920.jpg">
+                    </div>
+                    <div class="dental-info ml-5 mt-10 xl:mr-10">
+                        <h2 class="treat-font mb-4">美容牙科</h2>
+                        <p class="item-font mb-4 w-[350px]  text-black text-justify">
+                            專注於改善患者的口腔外觀和美觀度，由專科醫生依據病人的外貌特徵，結合醫學與美學，通過各種牙齒修復和美容程序，提供患者更自信的笑容和更健康的口腔。</p>
+                            <div class="font-black mb-2">牙醫提供全瓷診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 美容貼片</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 蛀牙補綴 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 缺損修復 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 齒雕覆蓋修復</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 植牙、全瓷假牙冠</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 德國數位3D晶雕 </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4 xl:flex" id="five">
+                    <div class="pic mb-4 xl:mr-5 flex items-center">
+                        <img src="https://www.fed.com.tw/data/service/cover/1673504814495045186.jpg">
+                    </div>
+                    <div class="dental-info mt-10 ml-5">
+                        <h2 class="treat-font mb-4">人工植牙</h2>
+                        <p class="item-font mb-4 w-[350px] text-black text-justify">
+                            是一種修復口腔的牙科手術，將無菌處理過、與人體組織能結合良好的鈦金屬牙根，植入齒槽骨中，以支撐其上各種假牙的咬合力、取代喪失的牙齒，恢復美觀、改善咀嚼功能。</p>
+                            <div class="font-black mb-2">人工植牙診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 定期口腔健檢及塗氟</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 齲齒預防與治療 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 乳牙/恆牙外傷治療 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 教育機關牙齒宣導及訓練</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 針對過度恐懼孩童提供舒眠治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> MRC兒童肌咬合訓練</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dental-type mb-8 md:mb-20 rounded bg-primary-200 p-4 xl:flex flex-row-reverse" id="six">
+                    <div class="pic mb-4 xl:mr-5 flex items-center">
+                        <img class="xl:max-w-[100%] " src="https://www.fed.com.tw/data/service/cover/1669874511251591097.jpg">
+                    </div>
+                    <div class="dental-info ml-5 mt-10 xl:mr-10">
+                        <h2 class="treat-font mb-4">其他項目</h2>
+                        <p class="item-font mb-4 w-[350px] text-black text-justify">
+                            牙齒是我們整體健康的關鍵，我們的專業牙科團隊包括經驗豐富的牙醫、口腔衛生師和護理師，無論需要牙齒檢查、治療牙齒問題還是改善笑容，芽渼會提供個性化的解決方案，歡迎您隨時預約診療。</p>
+                            <div class="font-black mb-2">其他診療項目：</div>
+                        <ul class="text-gray-500">
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 根管治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 牙齦下刮除術 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 美容牙科/牙齦美白微整術 </li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 微創牙周治療</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> 牙體修復</li>
+                            <li><i class="fa-solid fa-tooth" style="color: #66BAB7;"></i> MRC功能性齒顎矯正</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <footer class="h-377 md:h-113 py-16 md:py-100 font-sanst">
+  <div class="w-8/12 mx-auto flex flex-col items-center justify-center md:flex-row md:justify-between">
+    <ul class="w-[287px] lg:w-[495px] flex justify-between">
+      <li class="md:text-xl lg:text-xl font-bold">
+        <a class="block mb-6" href="#">最新消息</a>
+        <a class="block mb-6" href="#">門診時間</a>
+        <a class="block mb-6" href="#">診所資訊</a>
+        <a class="block mb-6" href="#">診所評論</a>
+      </li>
+      <li class="text-xl">
+        <a class="block font-bold mb-6" href="#">服務項目</a>
+        <a class="block mb-6" href="#">一般牙科</a>
+        <a class="block mb-6" href="#">美容牙科</a>
+        <a class="block mb-6" href="#">兒童牙科</a>
+        <a class="block mb-6" href="#">牙齒矯正</a>
+      </li>
+      <li class="text-xl font-bold">
+        <a class="block mb-6" href="#">醫護團隊</a>
+        <a class="block mb-6" href="#">診所預約</a>
+      </li>
+    </ul>
+    <div class="h-64 flex flex-col items-center justify-center md:justify-between">
+      <a class="block" href="../../pages/front/index.html">
+        <img class="w-48 h-10 invisible md:visible" src="/yaMeiProject/assets/logo.2bfbf08d.svg" alt="logo">
+      </a>
+      <div>
+        <ul class="flex justify-between mb-5">
+          <li>
+            <a class="w-60 h-60 flex items-center justify-center font-bold rounded-full text-primary-400 bg-primary-100"
+              href="#">
+              <i class="fa-brands fa-line fa-2xl"></i>
+            </a>
+          </li>
+          <li>
+            <a class="w-60 h-60 flex items-center justify-center font-bold rounded-full text-primary-400 bg-primary-100"
+              href="#">
+              <i class="fa-brands fa-instagram fa-2xl"></i>
+            </a>
+          </li>
+          <li>
+            <a class="w-60 h-60 flex items-center justify-center font-bold rounded-full text-primary-400 bg-primary-100"
+              href="#">
+              <i class="fa-brands fa-facebook fa-2xl"></i>
+            </a>
+          </li>
+        </ul>
+        <P class="text-gray-500 font-medium">
+          ©芽渼牙醫診所 DENTAL CLINIC.
+        </P>
+      </div>
+    </div>
+  </div>
+</footer>
+            <!-- 載入header.js -->
+            
+            <script src="../../js/header.js"></script>
+            <script src="../../js/treatment.js"></script>
+            <!-- 載入footer.js -->
+            <!-- <script src="../../js/footer.js"></script> -->
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+                integrity="sha512-..." crossorigin="anonymous"></script>
+</body>
+
+</html>

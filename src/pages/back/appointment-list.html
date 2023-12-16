@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 設定css路徑 -->
+  
+  <title>芽渼牙醫診所</title>
+  <script type="module" crossorigin src="/yaMeiProject/assets/back\\appointment-list.5653d7c6.js"></script>
+  <link rel="modulepreload" href="/yaMeiProject/assets/modulepreload-polyfill.b7f2da20.js">
+  <link rel="modulepreload" href="/yaMeiProject/assets/header.f8dbba0a.js">
+  <link rel="modulepreload" href="/yaMeiProject/assets/auth.831a793a.js">
+  <link rel="modulepreload" href="/yaMeiProject/assets/main.a2ed485e.js">
+  <link rel="stylesheet" href="/yaMeiProject/assets/main.5046967f.css">
+  <link rel="stylesheet" href="/yaMeiProject/assets/tailwind.bc2e35dc.css">
+</head>
+
+<body>
+  <div class="w-1/2 m-auto mt-20">
+    <div class="border-b-4 border-primary-300">
+      <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">看診清單</span>
+    </div>
+
+    <div class="my-2">
+      <label for="date" class="pl-8">日&nbsp期&nbsp:&nbsp</label>
+
+      <input type="date" name="" id="searchDate" class="pl-8">
+    </div>
+
+    <table class="w-full">
+      <thead>
+        <tr>
+          <th class="border border-slate-300 w-1/12"></th>
+          <th class="border border-slate-300 w-2/12">姓名</th>
+          <th class="border border-slate-300 w-2/12">性別</th>
+          <th class="border border-slate-300 w-2/12">生日</th>
+          <th class="border border-slate-300  px-3 w-2/12">病歷</th>
+          <th class="border border-slate-300 w-3/12">看診狀態</th>
+        </tr>
+      </thead>
+      <tbody id="appointmentTable"></tbody>
+    </table>
+    <div class="border-b-4 border-primary-300 my-20 ">
+      <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">叫號系統</span>
+    </div>
+
+
+    <span class="text-xl">目前看診號碼&nbsp:&nbsp</span>
+    <span class="num text-5xl font-black p-8">0</span>
+
+    <input type="button" value="下一號"
+      class="nextBtn px-3 mx-6 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+    <input type="button" value="歸零"
+      class="zeroBtn px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+  </div>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  
+  
+
+</body>
+
+</html>

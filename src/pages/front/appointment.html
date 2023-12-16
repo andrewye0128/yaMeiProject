@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 設定css路徑 -->
+  
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  
+  <title>芽渼牙醫診所</title>
+  <script type="module" crossorigin src="/yaMeiProject/assets/front\\appointment.5ecc3f21.js"></script>
+  <link rel="modulepreload" href="/yaMeiProject/assets/modulepreload-polyfill.b7f2da20.js">
+  <link rel="stylesheet" href="/yaMeiProject/assets/tailwind.bc2e35dc.css">
+  <link rel="stylesheet" href="/yaMeiProject/assets/index.b2162d7b.css">
+</head>
+
+<body>
+  <header id="header" class="fixed w-screen h-20 font-sanst border shadow-xl bg-white z-10 top-0">
+  <div class="  w-9/12 h-full mx-auto flex items-center justify-between">
+    <a class="block" href="https://alannayl.github.io/yaMeiProject/front/index.html">
+      <img class="w-48 h-10" src="/yaMeiProject/assets/logo.2bfbf08d.svg" alt="logo">
+    </a>
+    <div class="w-3/5 flex items-center justify-end">
+      <ul class="w-[799px]  flex-row items-center justify-between gap-2 font-sans text-xl font-semibold hidden xl:flex">
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a class="z-10" href="https://alannayl.github.io/yaMeiProject/front/clinic-intro.html">診所介紹</a>
+        </li>
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/front/treatment.html">服務項目</a>
+        </li>
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/front/medical-team.html">醫護團隊</a>
+        </li>
+        <li class="relative group">
+          <span class="block absolute w-[82px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/front/appointment">診所預約</a>
+        </li>
+        <li id="login-name" class="relative group">
+          <span class="block absolute w-[90px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+          <a href="https://alannayl.github.io/yaMeiProject/fback/login.html">登入/註冊</a>
+        </li>
+      </ul>
+      <span class="material-symbols-outlined cursor-pointer xl:invisible" id="menu">
+        menu
+      </span>
+    </div>
+  </div>
+</header>
+<div
+  class="w-0 fixed  font-sans text-xl font-semibold overflow-x-hidden flex flex-col    bg-primary-100 z-20 transition-all ease-in-out delay-150 top-0 right-0"
+  id="links">
+  <div class="w-10/12 h-20 mx-auto flex items-center justify-end mb-24">
+    <span class="material-symbols-outlined cursor-pointer border-yellow-500" id="close">
+      close
+    </span>
+  </div>
+  <div class="w-[375px] h-[680px] mx-auto flex flex-col items-center border-yellow-500">
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1] "></span>
+      <a class="block">診所介紹</a>
+    </div>
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="#">服務項目</a>
+    </div>
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="#">醫護團隊</a>
+    </div>
+    <div class="relative group mb-14">
+      <span class="block absolute w-[82px] h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="#">診所預約</a>
+    </div>
+    <div class="relative group">
+      <span class="block absolute w-full h-3 group-hover:bg-white top-4 z-[-1]"></span>
+      <a class="block" href="https://alannayl.github.io/yaMeiProject/fback/login.html">登入/註冊</a>
+    </div>
+  </div>
+</div>
+
+    <div class="bg-primary-100">
+      <div class="w-3/4 m-auto">
+        <!-- 當前看診號碼 -->
+        <div>
+          <h1 class=" mt-20 pt-8 title-font mb-2">當前看診號碼</h1>
+          <h2 class="text-4xl font-black E-font md:mb-32"> </h2>
+          <div class="py-12  text-center">
+            <span class="text-xl  pl-3">目前看診號碼:</span>
+            <span class="text-5xl font-black  pl-3 nowNum">10</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- 預約查詢 -->
+        <div>
+          <h1 class="title-font mb-2">預約查詢</h1>
+          <h2 class="E-font md:mb-32">Inquire</h2>
+          <h3 class="text-3xl font-black text-center py-12">查詢預約訊息</h3>
+          <div class="flex justify-center">
+            <form data-appointmentInfo-form>
+              <label for="idNum" class="text-center lg:text-2xl font-black  pr-3 ">身分證字號:</label>
+              <input type="text" name="searchIdNum" id="" placeholder="請輸入身分證字號"
+                class="idNum pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+              <div class="flex justify-center mt-5">
+                <button type="submit"
+                  class="inquire ml-5 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">查詢</button>
+              </div>
+            </form>
+
+          </div>
+          <!-- 搜尋結果 -->
+          <div class="inquireInfo"></div>
+
+        </div>
+
+        <!-- 診所預約 -->
+        <div class="mt-10">
+          <h1 class="title-font mb-2">診所預約</h1>
+          <h2 class="E-font md:mb-32">Appointment</h2>
+          <div class="lg:flex justify-center py-10">
+            <div class="pb-20 lg:mr-48  ">
+              <h3 class="bg-primary-300 text-center text-white text-xl font-black px-12 lg:px-60 ">症狀</h3>
+
+              <input type="radio" name="department" value="一般牙科" class="m-1 w-1/6">一般牙科
+              <input type="radio" name="department" value="兒童牙科" class="m-1 w-1/6">兒童牙科
+              <input type="radio" name="department" value="牙齒矯正" class="m-1 w-1/6">牙齒矯正
+              <input type="radio" name="department" value="美容牙科" class="m-1 w-1/6">美容牙科
+              <input type="radio" name="department" value="人工植牙" class="m-1 w-1/6">人工植牙
+              <input type="radio" name="department" value="其他診療項目" class="m-1 w-1/6">其他診療項目
+              <br>
+              <span class="text-l pl-3">就醫原因:</span>
+              <select name="symptom" id="symptom" class="px-1 border border-black rounded-lg m-3 ml-9 px-9">
+                <option value="蛀牙">蛀牙</option>
+                <option value="牙痛">牙痛</option>
+                <option value="牙周病">牙周病</option>
+                <option value="牙齒美白">牙齒美白</option>
+                <option value="牙齒矯正">牙齒矯正</option>
+                <option value="植牙">植牙</option>
+              </select>
+
+              <!-- 診所時間 -->
+              <h3 class="bg-primary-300 text-center px-12 text-white text-xl font-black">預約日期及時間</h3>
+              <!-- 預約日期 -->
+              <input type="date" name="date" id="date" class="ml-2 pl-4">
+              <br>
+              <!-- 時間 -->
+              <input type="radio" name="time" value="09:00" class="m-2 ">09:00
+              <input type="radio" name="time" value="10:00" class="m-2">10:00
+              <input type="radio" name="time" value="11:00" class="m-2">11:00
+              <input type="radio" name="time" value="14:00" class="m-2">14:00
+              <input type="radio" name="time" value="15:00" class="m-2">15:00
+              <input type="radio" name="time" value="16:00" class="m-2">16:00
+              <input type="radio" name="time" value="18:00" class="m-2">18:00
+              <input type="radio" name="time" value="19:00" class="m-2">19:00
+              <input type="radio" name="time" value="20:00" class="m-2">20:00
+              <br>
+
+              <!-- 基本資料 -->
+              <h3 class="bg-primary-300 text-center px-12 text-white text-xl font-black">基本資料</h3>
+              <form action="http://localhost:3000/Appointment">
+                <div class="p-3">
+                  <label for="name">姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp名&nbsp&nbsp:</label>
+                  <input type="text" name="name" id="" placeholder="請輸入姓名"
+                    class="name w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+                  <span class="remindNameId"></span>
+                </div>
+                <div class="p-3">
+                  <label for="sex">性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp別&nbsp&nbsp:</label>
+                  <input type="radio" name="sex" id="" value="男性" class="male ml-6 mr-2">男性
+                  <input type="radio" name="sex" id="" value="女性" class="female m-2">女性
+                </div>
+                <div class="p-3">
+                  <label for="idNum">身分證字號&nbsp&nbsp:</label>
+                  <input type="text" name="idNumber" id="" placeholder="請輸入身分證字號"
+                    class="idNumber w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+                  <span class="remindIdNum"></span>
+                </div>
+                <div class="p-3">
+                  <label for="birth">出&nbsp生&nbsp日&nbsp期&nbsp&nbsp:</label>
+                  <input type="text" name="birth" id="" placeholder="YYYY/MM/DD"
+                    class="birth  w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+                  <span class="remindBirth"></span>
+                </div>
+                <div class="p-3">
+                  <label for="mail">電&nbsp子&nbsp郵&nbsp件&nbsp&nbsp:</label>
+                  <input type="text" name="mail" id="" placeholder="請輸入E-mail"
+                    class="mail  w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+                  <span class="remindMail"></span>
+                </div>
+                <div class="p-3">
+                  <label for="phone">手&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp機&nbsp&nbsp:</label>
+                  <input type="text" name="phone" id="" placeholder="請輸入手機號碼"
+                    class="phone w-1/2 pl-3.5 ml-5 border-b-[2.5px] border-[#657786] bg-white focus:outline-0 focus:border-[#1e4bd1]">
+                  <span class="remindPhone"></span>
+                </div>
+                <h4 class="p-3">備&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp註&nbsp&nbsp:</h4>
+                <textarea name="remark" id="" cols="30" rows="10"
+                  class="remark  px-1 border border-black rounded-lg ml-32 w-2/3"></textarea>
+              </form>
+              <div class="flex justify-center">
+                <input type="submit" value="送出資訊" id=""
+                  class="send mt-10 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+              </div>
+            </div>
+
+            <span class="remindIdNum"></span>
+
+
+            <!-- 檢查輸入訊息 -->
+            <div class="checkInfo bg-white">
+              <h3 class="bg-primary-300 text-center px-12 text-white">請檢查輸入訊息</h3>
+              <div class="bg-white p-3">
+                <h4 class="text-center px-12 text-primary-300 underline">症狀</h4>
+                <p class="departCheck p-3">門診科別</p>
+                <p class="symptomCheck p-3">症狀</p>
+                <h4 class="text-center px-12 text-primary-300 underline">預約日期及時間</h4>
+                <p class="dateCheck p-3">預約日期</p>
+                <p class="timeCheck p-3">預約時間</p>
+                <p class="numCheck p-3">預約號碼</p>
+                <h4 class="text-center px-12 text-primary-300">基本資料</h4>
+                <p class="nameCheck p-3">姓名</p>
+                <p class="sexCheck p-3">性別</p>
+                <p class="idNumCheck p-3">身分證字號</p>
+                <p class="birthCheck p-3">出生日期</p>
+                <p class="mailCheck p-3">電子郵件</p>
+                <p class="phoneCheck p-3">手機</p>
+                <p class="remarkCheck p-3"></p>
+                <div class="flex justify-center">
+                  <input type="submit" value="確認預約" id=""
+                    class="save mt-10 px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="h-377 md:h-113 py-16 md:py-100 font-sanst">
+  <div class="w-8/12 mx-auto flex flex-col items-center justify-center md:flex-row md:justify-between">
+    <ul class="w-[287px] lg:w-[495px] flex justify-between">
+      <li class="md:text-xl lg:text-xl font-bold">
+        <a class="block mb-6" href="#">最新消息</a>
+        <a class="block mb-6" href="#">門診時間</a>
+        <a class="block mb-6" href="#">診所資訊</a>
+        <a class="block mb-6" href="#">診所評論</a>
+      </li>
+      <li class="text-xl">
+        <a class="block font-bold mb-6" href="#">服務項目</a>
+        <a class="block mb-6" href="#">一般牙科</a>
+        <a class="block mb-6" href="#">美容牙科</a>
+        <a class="block mb-6" href="#">兒童牙科</a>
+        <a class="block mb-6" href="#">牙齒矯正</a>
+      </li>
+      <li class="text-xl font-bold">
+        <a class="block mb-6" href="#">醫護團隊</a>
+        <a class="block mb-6" href="#">診所預約</a>
+      </li>
+    </ul>
+    <div class="h-64 flex flex-col items-center justify-center md:justify-between">
+      <a class="block" href="../../pages/front/index.html">
+        <img class="w-48 h-10 invisible md:visible" src="/yaMeiProject/assets/logo.2bfbf08d.svg" alt="logo">
+      </a>
+      <div>
+        <ul class="flex justify-between mb-5">
+          <li>
+            <a class="w-60 h-60 flex items-center justify-center font-bold rounded-full text-primary-400 bg-primary-100"
+              href="#">
+              <i class="fa-brands fa-line fa-2xl"></i>
+            </a>
+          </li>
+          <li>
+            <a class="w-60 h-60 flex items-center justify-center font-bold rounded-full text-primary-400 bg-primary-100"
+              href="#">
+              <i class="fa-brands fa-instagram fa-2xl"></i>
+            </a>
+          </li>
+          <li>
+            <a class="w-60 h-60 flex items-center justify-center font-bold rounded-full text-primary-400 bg-primary-100"
+              href="#">
+              <i class="fa-brands fa-facebook fa-2xl"></i>
+            </a>
+          </li>
+        </ul>
+        <P class="text-gray-500 font-medium">
+          ©芽渼牙醫診所 DENTAL CLINIC.
+        </P>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+      <script src="../../../appointment.js"></script>
+
+      <!-- 載入main.js -->
+      
+
+      <!-- 載入font awesome cdn -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+        integrity="sha512-..." crossorigin="anonymous"></script>
+</body>
+
+</html>
