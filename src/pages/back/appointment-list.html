@@ -10,7 +10,11 @@
 </head>
 
 <body>
-  <div class="w-1/2 m-auto mt-20">
+  <%- include('public/layouts/admin-header.ejs') %>
+  <div class="flex">
+    <div class="flex-initial"><%- include('public/layouts/admin-sidemenu.ejs') %></div>
+    <div class="flex-1 ">
+  <div class="w-1/2 m-auto mt-32">
     <div class="border-b-4 border-primary-300">
       <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">看診清單</span>
     </div>
@@ -47,6 +51,10 @@
     <input type="button" value="歸零"
       class="zeroBtn px-3 rounded-lg text-white bg-primary-300 hover:bg-primary-400 cursor-pointer">
   </div>
+</div>
+</div>
+
+  <!-- 載入js -->
   <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   <script type="module" src="../../js/appointment-list.js"></script>
   <script type="module" src="../../../main.js"></script>
