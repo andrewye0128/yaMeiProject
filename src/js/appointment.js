@@ -1,4 +1,14 @@
-import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm'
+import headers from "../js/header.js";
+
+// // 漢堡排事件
+headers.menu.addEventListener("click", headers.menuDisplayToggle);
+headers.close.addEventListener("click", headers.closeDisplayToggle);
+
+
+document.addEventListener("DOMContentLoaded", async function () {
+  headers.aLink();
+});
+
 // 目前看診號碼
 const nowNum = document.querySelector('.nowNum')
 
@@ -57,8 +67,7 @@ axios.get('https://yameiproject.onrender.com/Appointment')
   })
 
 // 送出預約表單資訊
-const send = document.querySelector('.send')
-
+const send = document.querySelector('#send')
 const nameId = document.querySelector('.name')
 const idNumber = document.querySelector('.idNumber')
 const birth = document.querySelector('.birth')
@@ -82,7 +91,36 @@ const remarkCheck = document.querySelector('.remarkCheck')
 function sendForm() {
   // 預約表單
   send.addEventListener('click', function (e) {
-    const selectDepart = document.querySelector('input[type=radio][name=department]:checked')
+    const selectDepart = document.querySelector(
+      "input[type=radio][name=department]:checked"
+    );
+
+
+    // 如果使用者沒有輸入任何預約資訊
+    if (
+      Object.is(selectDepart, null) ||
+      Object.is(dateCheck, null) ||
+      Object.is(timeCheck, null) ||
+      Object.is(numCheck, null) ||
+      Object.is(symptomCheck, null) ||
+      Object.is(nameCheck, null) ||
+      Object.is(idNumCheck, null) ||
+      Object.is(birthCheck, null) ||
+      Object.is(mailCheck, null) ||
+      Object.is(phoneCheck, null) ||
+      Object.is(sexCheck, null) ||
+      Object.is(remarkCheck, null)
+    ) {
+
+      Swal.fire({
+        title: "預約資訊空白",
+        text: "請輸入個人預約資訊",
+        icon: "error",
+      });
+
+      return
+    }
+
     departCheck.innerHTML = `<p>${selectDepart.value}</p>`
     const selectTime = document.querySelector('input[type=radio][name=time]:checked')
     timeCheck.innerHTML = `<p>${selectTime.value}</p>`
@@ -99,47 +137,62 @@ function sendForm() {
     phoneCheck.innerHTML = `<p>${phone.value}</p>`
     remarkCheck.innerHTML = `<p>${remark.value}</p>`
 
+
     // 預約號碼生成
-    axios.get('https://yameiproject.onrender.com/Appointment')
+    axios
+      .get("https://yameiproject.onrender.com/Appointment")
       .then(function (response) {
-        const data = response.data
+        const data = response.data;
         // const date = document.querySelector('#date')
 
-        const dateTotal = {}
+        const dateTotal = {};
         data.forEach(function (item) {
           if (dateTotal[item.date] == undefined) {
-            dateTotal[item.date] = 1
+            dateTotal[item.date] = 1;
           } else {
-            dateTotal[item.date] += 1
+            dateTotal[item.date] += 1;
           }
-        })
+        });
 
-        const dateArr = Object.keys(dateTotal)
-        const numArr = Object.values(dateTotal)
-        const indexOfDate = dateArr.indexOf(date.value)
+        const dateArr = Object.keys(dateTotal);
+        const numArr = Object.values(dateTotal);
+        const indexOfDate = dateArr.indexOf(date.value);
 
         if (indexOfDate !== -1) {
-          const numIndex = numArr[indexOfDate]
-          numCheck.innerHTML = `<span>${numIndex + 1}</span>`
+          const numIndex = numArr[indexOfDate];
+          numCheck.innerHTML = `<span>${numIndex + 1}</span>`;
         } else {
-          numCheck.innerHTML = '<span >1</span>'
+          numCheck.innerHTML = "<span >1</span>";
         }
-      })
+
+        // 提示查看『請檢查輸入訊息』欄位
+        Swal.fire({
+          title: "小提醒",
+          text: "請查看『請檢查輸入訊息』欄位",
+          icon: "info",
+        });
+      });
   })
 }
 
 // 將預約表單資訊推入資料庫
-const save = document.querySelector('.save')
+const save = document.querySelector('#save')
 
 function saveForm() {
   save.addEventListener('click', function (e) {
-    const selectDepart = document.querySelector('input[type=radio][name=department]:checked')
-    const selectTime = document.querySelector('input[type=radio][name=time]:checked')
-    const symptom = document.querySelector('#symptom')
-    const date = document.querySelector('#date')
-    const selected = document.querySelector('input[type=radio][name=sex]:checked')
-    axios.post('https://yameiproject.onrender.com/Appointment', {
+    const selectDepart = document.querySelector(
+      "input[type=radio][name=department]:checked"
+    );
+    const selectTime = document.querySelector(
+      "input[type=radio][name=time]:checked"
+    );
+    const symptom = document.querySelector("#symptom");
+    const date = document.querySelector("#date");
+    const selected = document.querySelector(
+      "input[type=radio][name=sex]:checked"
+    );
 
+    axios.post("https://yameiproject.onrender.com/Appointment", {
       depart: selectDepart.value,
       date: date.value,
       time: selectTime.value,
@@ -152,23 +205,30 @@ function saveForm() {
       mail: mail.value,
       phone: phone.value,
       remark: remark.value,
-      attendStatus: false
-    })
+      attendStatus: false,
+    });
 
-    alert('預約成功')
+    // 提示 => 預約成功
+    Swal.fire({
+      title: "預約成功!",
+      icon: "success",
+    });
 
     // 清空輸入格內值，方便下次輸入
     // selectDepart.value ="";
-    symptom.value = ''
-    date.value = ''
-    nameId.value = ''
-    idNumber.value = ''
-    birth.value = ''
-    mail.value = ''
-    phone.value = ''
-    remark.value = ''
+    symptom.value = "";
+    date.value = "";
+    nameId.value = "";
+    idNumber.value = "";
+    birth.value = "";
+    mail.value = "";
+    phone.value = "";
+    remark.value = "";
   })
 }
+
+sendForm();
+saveForm();
 
 // 將所有需要匯出的內容放入一個物件
 const appointmentModule = {
@@ -198,4 +258,4 @@ const appointmentModule = {
 }
 
 // 導出整個物件
-export default appointmentModule
+// export default appointmentModule
