@@ -9,7 +9,7 @@ const news = {
     try {
       const response = await api.get('/News')
       const serverData = response.data
-      console.log(serverData)
+      // console.log(serverData)
       // Static data
       const staticData = [
         {

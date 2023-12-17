@@ -28,8 +28,9 @@ if (authSigns.signForm) {
   authAdminLogins.adminLoginEvent();
 }
 
+// 前台登出點擊事件
+others.loginName.addEventListener("click", others.logOut);
+
 // 如果已登入，將『登入/註冊』，改為『登出』
 others.toggleLoginName();
 
-// 前台登出點擊事件
-others.loginName.addEventListener("click", others.logOut);

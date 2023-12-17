@@ -115,7 +115,7 @@ const swiper = {
         content.appendChild(createCard)
         createCard.appendChild(createMore)
       }
-      console.log(content)
+      // console.log(content)
     } catch (error) {
       console.error('Error fetching reviews:', error)
     }

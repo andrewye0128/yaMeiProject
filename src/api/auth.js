@@ -7,8 +7,8 @@ const authURL = 'https://yameiproject.onrender.com'
 let authToken = ''
 const host = window.location.origin
 // 開發用請使用這個路徑
-  // const BASE_PATH = '/yaMeiProject/src/pages/'
-const BASE_PATH = '/yaMeiProject/'
+  const BASE_PATH = '/yaMeiProject/src/pages/'
+// const BASE_PATH = '/yaMeiProject/'
 const front = 'front/'
 const back = 'back/'
 const userInfo = []
@@ -90,7 +90,7 @@ const login = async () => {
       localStorage.setItem('userInfo', JSON.stringify(userInfo))
     }
 
-    console.log(userInfo[0].role === "admin");
+    // console.log(userInfo[0].role === "admin");
 
     // 前台登入者
     if (userInfo[0].role === 'user') {
@@ -136,6 +136,13 @@ const logOut = () => {
       `
 }
 
+// const logOut = () => {
+//   console.log(loginForm);
+//   localStorage.removeItem("userInfo");
+//   localStorage.removeItem("authToken");
+//   loginName.innerText = '登入/註冊'
+// };
+
 // 後台登出功能
 const adminLoginOut = () => {
   localStorage.removeItem("userInfo");
@@ -155,6 +162,12 @@ const toggleLoginName = () => {
         <span class="block absolute w-[45px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
           <a href="${host}${BASE_PATH}${back}login.html">登出</a>
       `
+
+      // loginName.innerHTML = `
+      //   <span class="block absolute w-[45px] h-3 group-hover:bg-accent-100 top-4 z-[-1]"></span>
+      //     <span>登出</span>
+      // `;
+
       console.log('已換成登出')
     } else {
       loginName.innerHTML = `

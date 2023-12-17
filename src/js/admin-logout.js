@@ -9,12 +9,12 @@ function Links() {
   const pageLinkPath = {
     病歷管理: "medical-record",
     預約紀錄: "appointment-record",
-    當日看診: "appointment-list",
+    看診清單: "appointment-list",
   };
 
   const host = window.location.origin;
-  // const BASE_PATH = "/yaMeiProject/src/pages/back/";
-  const BASE_PATH = '/yaMeiProject/back/'
+  const BASE_PATH = "/yaMeiProject/src/pages/back/";
+  // const BASE_PATH = '/yaMeiProject/back/'
 
   for (const link of pageLinks) {
     const linkText = link.innerText.trim();
