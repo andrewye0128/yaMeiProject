@@ -40,7 +40,7 @@ axios.get('https://yameiproject.onrender.com/Appointment')
      <p class="departCheck p-3 text-center ">${data.depart}</p>
      <p class="symptomCheck p-3 text-center ">${data.symptom}</p>
      <h4 class="text-center px-12 text-primary-300 ">預約日期及時間</h4>
-     <p class="dateCheck p-3 text-center ">預約日期</p>
+     <p class="dateCheck p-3 text-center ">${data.date}</p>
      <p class="timeCheck p-3 text-center ">${data.time}</p>
      <h4 class="text-center px-12 text-primary-300">看診號碼</h4>
      <p class="timeCheck p-3 text-center ">${data.num}</p>
