@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芽渼牙醫診所</title>
+    <link rel="stylesheet" href="/src/css/tailwind.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="w-1/2 m-auto mt-20">
+        <div class="border-b-4 border-primary-300">
+          <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">聊天紀錄</span>
+        </div>
+    
+        <div class="my-2">
+          <label for="date" class="pl-8">日&nbsp期&nbsp:&nbsp</label>
+    
+          <input type="date" name="" id="searchDate" class="pl-8">
+        </div>
+    
+    
+        <table class="w-full mb-10">
+          <thead>
+            <tr>
+              <th class="border border-slate-300 w-1/12"></th>
+              <th class="border border-slate-300 w-2/12">日期</th>
+              <th class="border border-slate-300 w-1/12">性別</th>
+              <th class="border border-slate-300 w-2/12">名字</th>
+              <th class="border border-slate-300 w-1/12">信息內容</th>
+              <th class="border border-slate-300 w-2/12">回覆狀態</th>
+            </tr>
+          </thead>
+          <!-- <tbody id="appointmentTable"></tbody> -->
+        </table>
+        <!-- 分頁按鈕 -->
+        <div class="pagination box-border max-w-300 mx-auto">
+            <div class="mx-auto mt-5 flex items-center justify-between">
+              <div class="h-10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M14 18L8 12L14 6L15.4 7.4L10.8 12L15.4 16.6L14 18Z" fill="#C0C0C0" />
+                </svg>
+              </div>
+  
+              <!-- 分頁按鈕 -->
+              <div>
+                <div
+                  class="h-10 w-10 flex items-center justify-center text-gray-600 text-lg rounded-full transition duration-300 hover:bg-yellow-100">
+                  1
+                </div>
+              </div>
+              <div>
+                <div
+                  class="h-10 w-10 flex items-center justify-center text-gray-600 text-lg rounded-full transition duration-300 hover:bg-yellow-100">
+                  2
+                </div>
+              </div>
+              <div>
+                <div
+                  class="h-10 w-10 flex items-center justify-center text-gray-600 text-lg rounded-full transition duration-300 hover:bg-yellow-100">
+                  3
+                </div>
+              </div>
+              <div>
+                <div
+                  class="h-10 w-10 flex items-center justify-center text-gray-600 text-lg rounded-full transition duration-300 hover:bg-yellow-100">
+                  4
+                </div>
+              </div>
+  
+              <div class="h-10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="#363636" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+        <div class="border-b-4 border-primary-300 mt-20 mb-6">
+            <span class=" bg-primary-300 px-6 text-white text-2xl font-black rounded-t-lg">聊天訊息</span>
+          </div>
+          <div class="chat-messages h-[1px] w-10 p-[16px] border-primary-300">
+
+          </div>
+          <div class="chat-messages h-[300px] p-[16px] border-primary-300">
+        </div>
+        <div class="input-box w-[960px] h-[40px] border-[#E0E0E0] border-[1px] rounded-full flex items-center justify-between px-[16px] py-[10px]">
+            
+            <input type="text" placeholder="請輸入訊息" class="enterMessage w-[288px] h-[20px]">
+            <button onclick="sendMessage()"><img src="../../../public/images/search.png" alt=""></button>
+          </div>
+    </div>    
+
+    <script type="module" src="../../../main.js"></script>
+
+    <!-- 載入font awesome cdn -->
+    <script src="https://kit.fontawesome.com/25467b0b27.js" crossorigin="anonymous"></script>
+</body>
+</html>
